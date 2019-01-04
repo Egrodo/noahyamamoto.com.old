@@ -2,13 +2,22 @@ import "normalize.css";
 import "./index.css";
 
 function Initialize() {
-  console.log("Welcome to my site.");
-  StartCanvas();
+  console.log("Welcome to my site!");
+
+  // If we detect a mousemove event once, that means the user is browsing with a mouse.
+  // If we don't, it's probably a touchscreen, don't waste computation.
+  window.addEventListener(
+    "mousemove",
+    function mouseMove() {
+      // Remove the current listener and start mouse trailing.
+      window.removeEventListener("mousemove", mouseMove, false);
+      StartMouseTrail();
+    },
+    false
+  );
 }
 
-window.addEventListener("load", Initialize, false);
-
-function StartCanvas() {
+function StartMouseTrail() {
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
 
@@ -31,22 +40,12 @@ function StartCanvas() {
     let currX = 0;
     let currY = 0;
 
-    // Update the cursor position
-    window.addEventListener(
-      "mousemove",
-      ({ pageX, pageY }) => {
-        currX = pageX;
-        currY = pageY;
-      },
-      false
-    );
-
     const update = () => {
       ctx.beginPath();
       ctx.lineWidth = 7;
       ctx.moveTo(lastX, lastY);
       ctx.lineTo(currX, currY);
-      ctx.strokeStyle = "purple";
+      ctx.strokeStyle = "#b200f0";
       ctx.stroke();
 
       lastX = currX;
@@ -60,8 +59,21 @@ function StartCanvas() {
       requestAnimationFrame(update);
     };
 
+    // On mouse move update cursor position.
+    window.addEventListener(
+      "mousemove",
+      ({ pageX, pageY }) => {
+        currX = pageX;
+        currY = pageY;
+      },
+      false
+    );
+
+    // Start the update cycle.
     update();
   };
 
   startAnimation();
 }
+
+window.addEventListener("load", Initialize, false);
