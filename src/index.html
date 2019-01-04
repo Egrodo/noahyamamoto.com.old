@@ -2,13 +2,74 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Noah Yamamoto's Homepage</title>
   </head>
 
   <body>
-    <header>
-      <canvas id="canvas" class="canvas" width="1345px" height="979px"></canvas>
-      <div class="content"><h1>Hello there Noah Yamamoto</h1></div>
+    <canvas id="canvas" class="canvas" width="1345" height="979"></canvas>
+    <header class="firstView">
+      <div class="imgContainer">
+        <img
+          src="images/profile.jpeg"
+          class="profileImg"
+          alt="Photo of Noah Yamamoto"
+        />
+      </div>
+      <div class="introContainer">
+        <div>Hello, I'm</div>
+        <span class="fancyName">Noah Yamamoto</span>
+      </div>
+      <div class="blurbContainer">
+        I'm a CIS student at Baruch College. I love making things on the web and
+        have worked for cool companies like Marvel, Refugees United, and
+        Squarespace (2019)
+      </div>
+      <div class="socialContainer">
+        <a
+          href="https://instagram.com/egrodo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="images/instagram.svg"
+            class="socialImg"
+            alt="Instagram Link"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/~noah"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="images/linkedin.svg"
+            class="socialImg"
+            alt="linkedin Link"
+          />
+        </a>
+        <a
+          href="https://github.com/Egrodo/"
+          target="_blank"
+          rel="noreferral noopener"
+        >
+          <img src="images/github.png" class="socialImg" alt="github Lik" />
+        </a>
+      </div>
+      <div class="scrollContainer">
+        <!-- TODO: Clicking this scrolls down -->
+        <span class="scrollText">PROJECTS</span>
+        <div class="chevronContainer">
+          <div class="scrollChevron"></div>
+          <div class="scrollChevron"></div>
+          <div class="scrollChevron"></div>
+        </div>
+      </div>
     </header>
   </body>
 </html>
+
+<!-- https://codepen.io/NickNoordijk/pen/VLvxLE -->

@@ -1,28 +1,149 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400");
+
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
   background-color: black;
   color: white;
-  min-height: 100%;
+  font-family: "Josefin Sans", sans-serif;
 }
 
-header {
-  position: sticky;
-  top: 0;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-canvas {
+.canvas {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.content {
-  position: relative;
-  margin: 0 auto;
-  width: 100%;
+.firstView {
+  position: sticky;
+  top: 0;
+  padding-top: 3em;
+  text-align: center;
 }
 
-h1 {
-  margin: 0;
+.imgContainer {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
 }
+
+.profileImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+.introContainer {
+  line-height: 1.3em;
+  font-weight: 400;
+  font-size: 1.3em;
+}
+
+.blurbContainer {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  line-height: 1.3em;
+  font-weight: 300;
+  font-size: 0.9em;
+  padding: 0.6em;
+  margin: 3em 2em 1em 2em;
+}
+
+.socialImg {
+  width: 2em;
+  height: 2em;
+  padding: 0 0.2em;
+}
+
+/* Scroll prompt animation */
+.scrollContainer {
+  margin: 4em auto;
+}
+
+.chevronContainer {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+}
+
+.scrollChevron {
+  position: absolute;
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+
+.scrollChevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.scrollChevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.scrollChevron:before,
+.scrollChevron:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: #fff;
+}
+
+.scrollChevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.scrollChevron:after {
+  right: 0;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+.scrollText {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  text-transform: lowercase;
+  font-weight: 400;
+  color: #fff;
+  opacity: 0.25;
+  animation: pulse 2s linear alternate infinite;
+}
+
+@keyframes pulse {
+  to {
+    opacity: 0.9;
+  }
+}
+
+/* End scroll stuff */

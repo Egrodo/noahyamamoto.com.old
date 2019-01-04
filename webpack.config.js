@@ -16,6 +16,11 @@ const config = {
   // Mode
   mode: "development",
 
+  // DevServer options
+  devServer: {
+    open: true
+  },
+
   // Loaders
   module: {
     rules: [
@@ -25,10 +30,23 @@ const config = {
         exclude: /node_modules/,
         use: ["babel-loader"]
       },
+
       // CSS Files
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
+      },
+
+      // HTML
+      {
+        test: /\.html$/,
+        use: ["html-loader"]
+      },
+
+      // Images
+      {
+        test: /\.(png|svg|jpg|gif|jpeg)$/,
+        use: ["file-loader"]
       }
     ]
   },
@@ -38,7 +56,6 @@ const config = {
     new htmlWebpackPlugin({
       template: "./src/index.html",
       filename: "index.html",
-      title: "Noah Yamamoto",
       favicon: "./favicon.ico",
       hash: true
     })
