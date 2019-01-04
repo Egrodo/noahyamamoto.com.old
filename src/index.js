@@ -1,3 +1,5 @@
+import "./index.css";
+
 // Canvas animation iife
 (() => {
   const canvas = document.getElementById("canvas");
