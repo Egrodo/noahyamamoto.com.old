@@ -21,6 +21,8 @@ a {
   left: 0;
 }
 
+/* Begin first view styles */
+
 .firstView {
   position: sticky;
   top: 0;
@@ -46,6 +48,42 @@ a {
   font-size: 1.3em;
 }
 
+.fancyGradient {
+  position: relative;
+  display: inline-block;
+  padding: 0.2em;
+}
+
+.fancyGradient::before {
+  content: "";
+  position: absolute;
+  padding: 0.2em;
+  top: 0.2em;
+  right: 0;
+  left: 0;
+  bottom: 0.2em;
+
+  background: linear-gradient(272deg, #ff0000, #35ff00, #000cff, #b200f0);
+  background-size: 400% 400%;
+  animation: gradient 10s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.fancyName {
+  position: relative;
+}
+
 .blurbContainer {
   background-color: rgba(255, 255, 255, 0.16);
   border-radius: 10px;
@@ -53,7 +91,7 @@ a {
   font-weight: 300;
   font-size: 0.9em;
   padding: 0.6em;
-  margin: 3em 2em 1em 2em;
+  margin: 2em 2em 1em 2em;
 }
 
 .socialImg {
@@ -62,9 +100,10 @@ a {
   padding: 0 0.2em;
 }
 
-/* Scroll prompt animation */
+/* Begin scroll animation styles */
 .scrollContainer {
   margin: 4em auto;
+  cursor: pointer;
 }
 
 .chevronContainer {
@@ -146,4 +185,6 @@ a {
   }
 }
 
-/* End scroll stuff */
+/* End scroll animation styles */
+
+/* End first view styles */
