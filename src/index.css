@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  min-height: 100%;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.content {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
+}
