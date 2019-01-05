@@ -1,13 +1,19 @@
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400");
+@import url("https://fonts.googleapis.com/css?family=Aleo:300,400");
 
 body {
+  color: white;
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
   background-color: black;
-  color: white;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Aleo", serif;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 a {
@@ -15,24 +21,27 @@ a {
   color: inherit;
 }
 
-.canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
 }
 
 /* Begin first view styles */
 
 .firstView {
-  position: sticky;
-  top: 0;
-  padding-top: 3em;
   text-align: center;
+  position: relative;
+  height: 100vh;
+  top: 0;
 }
 
-.imgContainer {
+.profileImgContainer {
   display: block;
   width: 100%;
+  padding-top: 3em;
   margin-bottom: 1em;
 }
 
@@ -63,7 +72,7 @@ a {
   left: 0;
   bottom: 0.2em;
 
-  background: linear-gradient(272deg, #ff0000, #35ff00, #000cff, #b200f0);
+  background: linear-gradient(272deg, #27c200, #00a5c2, #000cff, #b200f0);
   background-size: 400% 400%;
   animation: gradient 10s linear infinite;
 }
@@ -101,8 +110,13 @@ a {
 }
 
 /* Begin scroll animation styles */
+/* TODO: Fix size of this so clicking works */
 .scrollContainer {
-  margin: 4em auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 7em;
   cursor: pointer;
 }
 
@@ -168,23 +182,51 @@ a {
   }
 }
 
-.scrollText {
-  display: block;
-  text-align: center;
-  font-size: 1.2em;
-  text-transform: lowercase;
-  font-weight: 400;
-  color: #fff;
-  opacity: 0.25;
-  animation: pulse 2s linear alternate infinite;
-}
-
-@keyframes pulse {
-  to {
-    opacity: 0.9;
-  }
-}
-
 /* End scroll animation styles */
 
 /* End first view styles */
+
+.Projects {
+  background-color: rgb(31, 31, 31);
+}
+
+.projHeader {
+  border-top: 1px solid rgb(66, 66, 66);
+  text-align: center;
+}
+
+.projHeader > h1 {
+  font-size: 1.3em;
+  padding: 0.7em 0;
+}
+
+.project {
+  padding: 0 1em;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+.projImgContainer {
+  width: 30%;
+}
+
+.projDescContainer {
+  width: 70%;
+}
+
+.projDesc {
+  margin: 0.5em;
+}
+
+.projImg {
+  width: 75%;
+  height: 75%;
+}
+
+.projLink {
+  text-align: right;
+  color: blue;
+  width: 100%;
+}

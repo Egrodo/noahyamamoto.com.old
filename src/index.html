@@ -12,7 +12,7 @@
   <body>
     <canvas id="canvas" class="canvas" width="1345" height="979"></canvas>
     <header class="firstView">
-      <div class="imgContainer">
+      <div class="profileImgContainer">
         <img
           src="images/profile.jpeg"
           class="profileImg"
@@ -62,8 +62,6 @@
         </a>
       </div>
       <div class="scrollContainer">
-        <!-- TODO: Clicking this scrolls down -->
-        <span class="scrollText">my projects</span>
         <div class="chevronContainer">
           <div class="scrollChevron"></div>
           <div class="scrollChevron"></div>
@@ -71,5 +69,57 @@
         </div>
       </div>
     </header>
+    <section class="Projects">
+      <div class="projHeader"><h1>Projects</h1></div>
+      <div id="projArea">
+        <div class="project">
+          <div class="projImgContainer">
+            <img
+              src="images/choochoo.png"
+              class="projImg"
+              alt="Project Image"
+            />
+          </div>
+          <div class="projDescContainer">
+            <h2>Choochoo</h2>
+            <p class="projDesc">
+              A progressive web application that gives you real-time updates of
+              weather and train status at any MTA station in NYC.
+            </p>
+            <div class="projLink">
+              <a
+                href="https://github.com/Egrodo/choochoo#readme"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Check it out!
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project">
+          <div class="projImgContainer">
+            <img src="images/sudoku.png" class="projImg" alt="Project Image" />
+          </div>
+          <div class="projDescContainer">
+            <h2>Sudoku</h2>
+            <p class="projDesc">
+              My first progressive web app, a simple but feature-filled Sudoku
+              game that uses a custom algorithm to generate infinite games of
+              varying difficulty.
+            </p>
+            <div class="projLink">
+              <a
+                href="https://github.com/Egrodo/sudoku#readme"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Check it out!
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
