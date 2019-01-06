@@ -1,4 +1,3 @@
-import Projects from "./ProjectData.js";
 import "normalize.css";
 import "./index.css";
 
@@ -16,8 +15,6 @@ function Initialize() {
     },
     false
   );
-
-  ProjectFactory();
 }
 
 function StartMouseTrail() {
@@ -77,12 +74,6 @@ function StartMouseTrail() {
   };
 
   startAnimation();
-}
-
-function ProjectFactory() {
-  // Load in projects from a JSON file and render them in projArea.
-  console.log(Projects);
-  const projArea = document.getElementById("projArea");
 }
 
 window.addEventListener("load", Initialize, false);

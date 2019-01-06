@@ -66,16 +66,16 @@
           <img src="images/github.png" alt="Github Link" class="socialImg" />
         </a>
       </div>
-      <div class="scrollContainer">
+      <a href="#Projects" class="scrollContainer">
         <div class="chevronContainer">
           <div class="scrollChevron"></div>
           <div class="scrollChevron"></div>
           <div class="scrollChevron"></div>
         </div>
-      </div>
+      </a>
     </header>
-    <div class="projHeader"><h1>Projects</h1></div>
-    <section class="Projects">
+    <section class="Projects" id="Projects">
+      <div class="projHeader"><h1>Projects</h1></div>
       <div class="projArea" id="projArea">
         <div class="project">
           <div class="projImgContainer">
@@ -86,7 +86,7 @@
             />
           </div>
           <div class="projDescContainer">
-            <h2>Choochoo</h2>
+            <h2 class="projDescTitle">Choochoo</h2>
             <p class="projDesc">
               A progressive web application that gives you real-time updates of
               weather and train status at any MTA station in NYC.
@@ -97,7 +97,9 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span class="projLink">Check it out </span>
+              <span class="projLink" data-gradient="#ffe236">
+                Check it out
+              </span>
             </a>
           </div>
         </div>
@@ -106,10 +108,10 @@
             <img src="images/sudoku.png" class="projImg" alt="Project Image" />
           </div>
           <div class="projDescContainer">
-            <h2>Sudoku</h2>
+            <h2 class="projDescTitle">Sudoku</h2>
             <p class="projDesc">
-              My first progressive web app, a simple but feature-filled Sudoku
-              game that uses a custom algorithm to generate infinite games of
+              My first progressive web app, a simple but featureful Sudoku game
+              that uses a custom algorithm to generate infinite puzzles of
               varying difficulty.
             </p>
             <a
@@ -118,7 +120,32 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span class="projLink">Check it out </span>
+              <span class="projLink" data-gradient="#b700ff">
+                Check it out
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="project">
+          <div class="projImgContainer">
+            <img src="images/stars.gif" class="projImg" alt="Project Image" />
+          </div>
+          <div class="projDescContainer">
+            <h2 class="projDescTitle">NoahYamamoto.com</h2>
+            <p class="projDesc">
+              This very website! I coded this site from scratch using lots of
+              modern features and techniques like HTML5 Canvas and element
+              factories.
+            </p>
+            <a
+              class="projLinkContainer"
+              href="https://github.com/Egrodo/noahyamamoto.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="projLink" data-gradient="#b700ff">
+                Check it out
+              </span>
             </a>
           </div>
         </div>
