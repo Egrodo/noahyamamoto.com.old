@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Aleo:300,400");
+@import url("https://fonts.googleapis.com/css?family=Space+Mono|Work+Sans");
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   color: white;
@@ -7,7 +11,7 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: black;
-  font-family: "Aleo", serif;
+  font-family: "Work Sans", sans-serif;
 }
 
 canvas {
@@ -26,6 +30,14 @@ h2,
 h3,
 h4,
 h5 {
+  margin: 0;
+  font-family: "Space Mono", monospace;
+  letter-spacing: 0.05em;
+}
+
+p {
+  color: #ffffff99;
+  padding: 0;
   margin: 0;
 }
 
@@ -100,13 +112,21 @@ h5 {
   font-weight: 300;
   font-size: 0.9em;
   padding: 0.6em;
-  margin: 2em 2em 1em 2em;
+  margin: 2em;
+}
+
+.blurbContainer p {
+  color: #ffffffdc;
+  padding: 0.3em 0.1em;
+}
+
+.socialLink {
+  padding: 0 0.2em;
 }
 
 .socialImg {
   width: 2em;
   height: 2em;
-  padding: 0 0.2em;
 }
 
 /* Begin scroll animation styles */
@@ -186,12 +206,7 @@ h5 {
 
 /* End first view styles */
 
-.Projects {
-  background-color: rgb(31, 31, 31);
-}
-
 .projHeader {
-  border-top: 1px solid rgb(66, 66, 66);
   text-align: center;
 }
 
@@ -200,12 +215,19 @@ h5 {
   padding: 0.7em 0;
 }
 
+.Projects {
+  background-color: rgb(31, 31, 31);
+}
+
+.projArea {
+  margin: 1em 0;
+}
+
 .project {
-  padding: 0 1em;
-  height: 20vh;
+  padding: 1em;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid white;
+  border: 1px solid rgb(66, 66, 66);
 }
 
 .projImgContainer {
@@ -218,6 +240,7 @@ h5 {
 
 .projDesc {
   margin: 0.5em;
+  line-height: 1.1em;
 }
 
 .projImg {
@@ -225,8 +248,38 @@ h5 {
   height: 75%;
 }
 
+.projLinkContainer {
+  display: inline-flex;
+  line-height: 1.6;
+}
+
 .projLink {
-  text-align: right;
-  color: blue;
+  position: relative;
+  display: inline-block;
+}
+
+.projLink::before,
+.projLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
+  height: 1px;
+  transform-origin: left center;
+}
+
+.projLink::before {
+  background: linear-gradient(135deg, #33b187, #7bbf58);
+}
+
+.projLink::after {
+  background: white;
+  transform: scaleX(0);
+  transition: transform 0.5s cubic-bezier(0.51, 0.92, 0.24, 1) 0.1s,
+    -webkit-transform 0.5s cubic-bezier(0.51, 0.92, 0.24, 1) 0.1s;
+}
+
+.projLinkContainer:hover .projLink::after {
+  transform: scaleX(1);
 }

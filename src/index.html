@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <canvas id="canvas" class="canvas" width="1345" height="979"></canvas>
+    <canvas id="canvas" class="canvas" width="0" height="0"></canvas>
     <header class="firstView">
       <div class="profileImgContainer">
         <img
@@ -20,45 +20,50 @@
         />
       </div>
       <div class="introContainer">
-        <div>Hello, I'm</div>
+        <div>Hi there, I'm</div>
         <span class="fancyGradient">
           <span class="fancyName">Noah Yamamoto</span>
         </span>
       </div>
       <div class="blurbContainer">
-        I'm a CIS student at Baruch College. I love making things on the web and
-        have worked for cool companies like Marvel, Refugees United, and
-        Squarespace (2019)
+        <p>
+          I'm a CIS student at Baruch College. I love making things on the web
+          and have worked for cool companies like Marvel, Refugees United, and
+          Squarespace (2019)
+        </p>
       </div>
       <div class="socialContainer">
         <a
           href="https://instagram.com/egrodo"
           target="_blank"
           rel="noopener noreferrer"
+          class="socialLink"
         >
           <img
             src="images/instagram.svg"
-            class="socialImg"
             alt="Instagram Link"
+            class="socialImg"
           />
         </a>
         <a
           href="https://www.linkedin.com/in/~noah"
           target="_blank"
           rel="noopener noreferrer"
+          class="socialLink"
         >
           <img
             src="images/linkedin.svg"
+            alt="Linkedin Link"
             class="socialImg"
-            alt="linkedin Link"
           />
         </a>
         <a
           href="https://github.com/Egrodo/"
           target="_blank"
           rel="noreferral noopener"
+          class="socialLink"
         >
-          <img src="images/github.png" class="socialImg" alt="github Lik" />
+          <img src="images/github.png" alt="Github Link" class="socialImg" />
         </a>
       </div>
       <div class="scrollContainer">
@@ -69,9 +74,9 @@
         </div>
       </div>
     </header>
+    <div class="projHeader"><h1>Projects</h1></div>
     <section class="Projects">
-      <div class="projHeader"><h1>Projects</h1></div>
-      <div id="projArea">
+      <div class="projArea" id="projArea">
         <div class="project">
           <div class="projImgContainer">
             <img
@@ -86,15 +91,14 @@
               A progressive web application that gives you real-time updates of
               weather and train status at any MTA station in NYC.
             </p>
-            <div class="projLink">
-              <a
-                href="https://github.com/Egrodo/choochoo#readme"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Check it out!
-              </a>
-            </div>
+            <a
+              class="projLinkContainer"
+              href="https://github.com/Egrodo/choochoo#readme"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="projLink">Check it out </span>
+            </a>
           </div>
         </div>
         <div class="project">
@@ -108,15 +112,14 @@
               game that uses a custom algorithm to generate infinite games of
               varying difficulty.
             </p>
-            <div class="projLink">
-              <a
-                href="https://github.com/Egrodo/sudoku#readme"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Check it out!
-              </a>
-            </div>
+            <a
+              class="projLinkContainer"
+              href="https://github.com/Egrodo/sudoku#readme"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="projLink">Check it out </span>
+            </a>
           </div>
         </div>
       </div>
