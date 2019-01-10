@@ -131,7 +131,7 @@ p {
   height: 2em;
 }
 
-/* Begin scroll animation styles */
+/* Begin scroll chevron styles */
 .scrollContainer {
   position: absolute;
   bottom: 0;
@@ -204,19 +204,19 @@ p {
 }
 
 /* End scroll animation styles */
-
 /* End first view styles */
+
 /* Begin project view styles */
-.projHeader {
+.sectionHeader {
   text-align: center;
 }
 
-.projHeader > h1 {
+.sectionHeader > h1 {
   font-size: 1.3em;
   padding: 0.7em 0;
 }
 
-.projArea {
+.sectionArea {
   margin-top: 0.5em;
   background-color: #1f1f1f;
 }
@@ -288,3 +288,11 @@ p {
 }
 
 /* End project view styles */
+
+/* Start blog view styles */
+
+.Blog {
+  margin-top: 2em;
+}
+
+/* End blog view styles */
