@@ -2,7 +2,7 @@
 layout: post
 author: Noah
 title: Choochoo App
-excerpt: A PWA that gives you real-time updates of weather and train status at any MTA station in NYC.
+excerpt: A writeup on Choochoo, my personal project that gives you real-time updates of weather and train status at any  MTA station in NYC.
 ---
 
 <h1 align="center">Choochoo</h1>

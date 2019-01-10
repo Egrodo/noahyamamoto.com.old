@@ -206,7 +206,7 @@ p {
 /* End scroll animation styles */
 /* End first view styles */
 
-/* Begin project view styles */
+/* Begin project list styles */
 .sectionHeader {
   text-align: center;
 }
@@ -251,18 +251,18 @@ p {
   height: 75%;
 }
 
-.projLinkContainer {
+.linkContainer {
   display: inline-flex;
   line-height: 1.6em;
 }
 
-.projLink {
+.fancyLink {
   position: relative;
   display: inline-block;
 }
 
-.projLink::before,
-.projLink::after {
+.fancyLink::before,
+.fancyLink::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -272,27 +272,59 @@ p {
   transform-origin: left center;
 }
 
-.projLink::before {
+.fancyLink::before {
   background: linear-gradient(135deg, #27c200, #00a5c2);
 }
 
-.projLink::after {
+.fancyLink::after {
   background: #fff;
   transform: scaleX(0);
   transition: transform 0.5s cubic-bezier(0.51, 0.92, 0.24, 1) 0.1s,
     -webkit-transform 0.5s cubic-bezier(0.51, 0.92, 0.24, 1) 0.1s;
 }
 
-.projLinkContainer:hover .projLink::after {
+.linkContainer:hover .fancyLink::after {
   transform: scaleX(1);
 }
 
-/* End project view styles */
+/* End project list styles */
 
-/* Start blog view styles */
+/* Start post list styles */
 
 .Blog {
   margin-top: 2em;
 }
 
-/* End blog view styles */
+.blogPost {
+  border-top: 1px solid #424242;
+  padding: 1em;
+}
+
+.blogTitle {
+  text-align: left;
+}
+
+.blogTitle > h2 {
+  display: inline-block;
+}
+
+.blogTitle > h2::after {
+  content: "—";
+  color: #a0a0a0;
+  padding-right: 0.3em;
+}
+
+.blogTitle > span {
+  color: #a0a0a0;
+}
+
+.blogDesc {
+  margin: 0.5em;
+}
+
+.blogLink {
+  width: 100%;
+  text-align: right;
+}
+
+/* End post list styles */

@@ -75,12 +75,12 @@ title: Noah Yamamoto
         <h2 class="projDescTitle">{{ post.title }}</h2>
         <p class="projDesc">{{ post.description }}</p>
         <a
-          class="projLinkContainer"
+          class="linkContainer"
           href="{{ post.link }}"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="projLink" data-gradient="#ffe236"> Check it out </span>
+          <span class="fancyLink" data-gradient="#ffe236"> Check it out </span>
         </a>
       </div>
     </div>
@@ -92,10 +92,24 @@ title: Noah Yamamoto
   <div class="sectionArea">
     {% for post in site.posts limit: 3 %}
     <div class="blogPost">
-      <h2>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </h2>
-      <p>{{ post.excerpt }}</p>
+      <div class="blogTitle">
+        <h2>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </h2>
+        <span>{{ post.date | date_to_string }}</span>
+      </div>
+
+      <p class="blogDesc">{{ post.excerpt }}</p>
+      <div class="blogLink">
+        <a
+          class="linkContainer"
+          href="{{ post.url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="fancyLink" data-gradient="#ffe236"> Read More... </span>
+        </a>
+      </div>
     </div>
     {% endfor %}
   </div>
