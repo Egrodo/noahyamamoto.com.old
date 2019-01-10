@@ -1,6 +1,3 @@
-import "normalize.css";
-import "./index.css";
-
 function Initialize() {
   console.log("Welcome to my site!");
 

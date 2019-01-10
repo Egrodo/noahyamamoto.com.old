@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Noah Yamamoto</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <canvas id="canvas" class="canvas" width="0" height="0"></canvas>
+<header class="firstView">
+  <div class="profileImgContainer">
+    <img
+      src="images/profile.jpeg"
+      class="profileImg"
+      alt="Photo of Noah Yamamoto"
+    />
+  </div>
+  <div class="introContainer">
+    <div>Hi there, I'm</div>
+    <span class="fancyGradient">
+      <span class="fancyName">Noah Yamamoto</span>
+    </span>
+  </div>
+  <div class="blurbContainer">
+    <p>
+      I'm a CIS student at Baruch College. I love making things on the web and
+      have worked for cool companies like Marvel, Refugees United, and
+      Squarespace (2019)
+    </p>
+  </div>
+  <div class="socialContainer">
+    <a
+      href="https://instagram.com/egrodo"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="socialLink"
+    >
+      <img src="images/instagram.svg" alt="Instagram Link" class="socialImg" />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/~noah"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="socialLink"
+    >
+      <img src="images/linkedin.svg" alt="Linkedin Link" class="socialImg" />
+    </a>
+    <a
+      href="https://github.com/Egrodo/"
+      target="_blank"
+      rel="noreferral noopener"
+      class="socialLink"
+    >
+      <img src="images/github.png" alt="Github Link" class="socialImg" />
+    </a>
+  </div>
+  <a href="#Projects" class="scrollContainer">
+    <div class="chevronContainer">
+      <div class="scrollChevron"></div>
+      <div class="scrollChevron"></div>
+      <div class="scrollChevron"></div>
+    </div>
+  </a>
+</header>
+<section class="Projects" id="Projects">
+  <div class="sectionHeader"><h1>Projects</h1></div>
+  <div class="sectionArea">
+    
+    <div class="project">
+      <div class="projImgContainer">
+        <img
+          src="images/choochoo.png"
+          class="projImg"
+          alt="Choochoo Image"
+        />
+      </div>
+      <div class="projDescContainer">
+        <h2 class="projDescTitle">Choochoo</h2>
+        <p class="projDesc">A progressive web application that gives you real-time updates of weather and train status at any MTA station in NYC.</p>
+        <a
+          class="projLinkContainer"
+          href="https://github.com/Egrodo/choochoo#readme"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="projLink" data-gradient="#ffe236"> Check it out </span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="project">
+      <div class="projImgContainer">
+        <img
+          src="images/Sudoku.png"
+          class="projImg"
+          alt="Sudoku Image"
+        />
+      </div>
+      <div class="projDescContainer">
+        <h2 class="projDescTitle">Sudoku</h2>
+        <p class="projDesc">My first progressive web app, a simple but featureful Sudoku game that uses a custom algorithm to generate infinite puzzles of varying difficulty.</p>
+        <a
+          class="projLinkContainer"
+          href="https://github.com/Egrodo/sudoku#readme"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="projLink" data-gradient="#ffe236"> Check it out </span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="project">
+      <div class="projImgContainer">
+        <img
+          src="images/stars.gif"
+          class="projImg"
+          alt="NoahYamamoto.com Image"
+        />
+      </div>
+      <div class="projDescContainer">
+        <h2 class="projDescTitle">NoahYamamoto.com</h2>
+        <p class="projDesc">This very website! I coded this site from scratch using lots of modern features and techniques like HTML5 Canvas and templating engines.</p>
+        <a
+          class="projLinkContainer"
+          href="https://github.com/Egrodo/noahyamamoto.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="projLink" data-gradient="#ffe236"> Check it out </span>
+        </a>
+      </div>
+    </div>
+    
+  </div>
+</section>
+<section class="Blog" id="Blog">
+  <div class="sectionHeader"><h1>Latest Write-Ups</h1></div>
+  <div class="sectionArea">
+    
+    <div class="blogPost">
+      <h2>
+        <a href="/blog/Choochoo-App">Choochoo App</a>
+      </h2>
+      <p>A PWA that gives you real-time updates of weather and train status at any MTA station in NYC.</p>
+    </div>
+    
+    <div class="blogPost">
+      <h2>
+        <a href="/blog/TreeWalker-API">Treewalker Api</a>
+      </h2>
+      <p><p>I want to write an article on the Treewalker API and its usage.</p>
+</p>
+    </div>
+    
+    <div class="blogPost">
+      <h2>
+        <a href="/blog/Sudoku-App">Sudoku App</a>
+      </h2>
+      <p>Writeup on Sudoku, my first progressive web application and game.</p>
+    </div>
+    
+  </div>
+</section>
+
+  </body>
+  <script src="js/index.js" defer></script>
+</html>
