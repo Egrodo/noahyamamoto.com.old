@@ -1,0 +1,29 @@
+<section class="Projects" id="Projects">
+  <div class="sectionHeader"><h1>Projects</h1></div>
+  <div class="sectionArea">
+    {% for post in site.data.projects limit: 3 %}
+    <div class="project">
+      <div class="projImgContainer">
+        <img
+          src="{{ post.image }}"
+          class="projImg"
+          alt="{{ post.title }} Image"
+          />
+      </div>
+      <div class="projDescContainer">
+        <h2 class="projDescTitle">{{ post.title }}</h2>
+        <p class="projDesc">{{ post.description }}</p>
+        <div class="projLink">
+          <a
+            class="fancyLink"
+            href="{{ post.link }}"
+            target="_blank"
+            rel="noopener noreferrer">
+            <span class="fancyLinkText"> Check it out </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

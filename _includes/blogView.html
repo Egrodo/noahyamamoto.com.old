@@ -1,0 +1,32 @@
+<section class="Blog" id="Blog">
+  <div class="sectionHeader">
+    <a href="{{ site.url }}/blog" class="headerLink" target="_blank"
+      rel="noopener noreferrer" alt="Link to blog" title="Click to go to blog
+      index">
+      <h1>Write-Ups</h1>
+    </a>
+  </div>
+  <div class="sectionArea">
+    {% for post in site.posts limit: 3 %}
+    <div class="blogPost">
+      <div class="blogTitle">
+        <h2>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </h2>
+        <span>{{ post.date | date_to_string }}</span>
+      </div>
+
+      <p class="blogDesc">{{ post.excerpt }}</p>
+      <div class="blogLink">
+        <a
+          class="fancyLink"
+          href="{{ post.url }}"
+          target="_blank"
+          rel="noopener noreferrer">
+          <span class="fancyLinkText"> Read More... </span>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
