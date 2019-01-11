@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Space+Mono|Work+Sans");
-
 * {
   box-sizing: border-box;
 }
@@ -85,10 +84,9 @@ p {
   right: 0;
   left: 0;
   bottom: 0.2em;
-
-  background: linear-gradient(272deg, #27c200, #00a5c2, #000cff, #b200f0);
+  background: linear-gradient(270deg, #27c200, #00a5c2, #000cff, #b200f0, #ff0000);
   background-size: 400% 400%;
-  animation: gradient 10s linear infinite;
+  animation: gradient 7s linear infinite;
 }
 
 @keyframes gradient {
@@ -132,6 +130,7 @@ p {
 }
 
 /* Begin scroll chevron styles */
+
 .scrollContainer {
   position: absolute;
   bottom: 0;
@@ -204,9 +203,11 @@ p {
 }
 
 /* End scroll animation styles */
+
 /* End first view styles */
 
 /* Begin project list styles */
+
 .sectionHeader {
   text-align: center;
 }
@@ -251,18 +252,23 @@ p {
   height: 75%;
 }
 
-.linkContainer {
+.projLink {
+  width: 100%;
+  text-align: left;
+}
+
+.fancyLink {
   display: inline-flex;
   line-height: 1.6em;
 }
 
-.fancyLink {
+.fancyLinkText {
   position: relative;
   display: inline-block;
 }
 
-.fancyLink::before,
-.fancyLink::after {
+.fancyLinkText::before,
+.fancyLinkText::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -272,18 +278,18 @@ p {
   transform-origin: left center;
 }
 
-.fancyLink::before {
+.fancyLinkText::before {
   background: linear-gradient(135deg, #27c200, #00a5c2);
 }
 
-.fancyLink::after {
+.fancyLinkText::after {
   background: #fff;
   transform: scaleX(0);
   transition: transform 0.5s cubic-bezier(0.51, 0.92, 0.24, 1) 0.1s,
     -webkit-transform 0.5s cubic-bezier(0.51, 0.92, 0.24, 1) 0.1s;
 }
 
-.linkContainer:hover .fancyLink::after {
+.fancyLink:hover .fancyLinkText::after {
   transform: scaleX(1);
 }
 
@@ -292,12 +298,17 @@ p {
 /* Start post list styles */
 
 .Blog {
-  margin-top: 2em;
+  margin-top: 5em;
 }
 
 .blogPost {
   border-top: 1px solid #424242;
   padding: 1em;
+}
+
+.headerLink > h1 {
+  font-size: 1.3em;
+  padding: 0.7em 0;
 }
 
 .blogTitle {
@@ -306,16 +317,14 @@ p {
 
 .blogTitle > h2 {
   display: inline-block;
-}
-
-.blogTitle > h2::after {
-  content: "—";
-  color: #a0a0a0;
-  padding-right: 0.3em;
+  font-size: 1.4em;
+  padding-right: 0.5em;
+  margin-bottom: 0.7em;
 }
 
 .blogTitle > span {
   color: #a0a0a0;
+  float: right;
 }
 
 .blogDesc {
@@ -328,3 +337,47 @@ p {
 }
 
 /* End post list styles */
+
+/* Begin contact section styles */
+
+.Contact {
+  margin-top: 5em;
+}
+
+.fancyLinkText.email {
+  padding-bottom: 0.2em;
+  font-size: 1.1em;
+}
+
+.fancyLinkText.email::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, #27c200, #00a5c2, #000cff, #b200f0, #ff0000);
+  background-size: 400% 400%;
+  animation: gradient 7s linear infinite;
+}
+
+.Contact .sectionArea {
+  border-top: 1px solid #424242;
+  padding: 1em 1em 1.3em 0;
+}
+
+.contactDesc {
+  margin-top: 1em;
+}
+
+.socialContainer.contact {
+  margin: 1.5em 0 0.5em 0;
+}
+
+.copyright {
+  font-family: monospace;
+  font-size: 1.2em;
+  color: #919191;
+}
+
+/* End contact section styles */

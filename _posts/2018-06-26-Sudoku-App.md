@@ -2,12 +2,12 @@
 layout: post
 author: Noah
 title: Sudoku App
-excerpt: Writeup on Sudoku, my first progressive web application and game.
+excerpt: This project started as a Leetcode algorithm challenge to solve Sudoku puzzles, but then I thought heck, I'm a front end developer aren't I?
 ---
 
 # SUDOKU
 
-#### Sudoku Progressive Web Application in React with custom CommonJS algorithm module.
+#### Sudoku Progressive Web Application in React with custom CommonJS algorithm module
 
 ![Gameplay GIF](https://i.imgur.com/fictjrN.gif)
 
