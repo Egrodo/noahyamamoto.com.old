@@ -10,10 +10,14 @@
     {% for post in site.posts limit: 3 %}
     <div class="blogPost">
       <div class="blogTitle">
-        <h2>
-          <a href="{{ post.url }}">{{ post.title }}</a>
-        </h2>
-        <span>{{ post.date | date_to_string }}</span>
+        <div class="postTitle">
+          <h2>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </h2>
+        </div>
+        <div class="postDate">
+          <span>{{ post.date | date_to_string }}</span>
+        </div>
       </div>
 
       <p class="blogDesc">{{ post.excerpt }}</p>
