@@ -1,0 +1,159 @@
+.Header {
+  text-align: center;
+  position: relative;
+  height: 100vh;
+  top: 0;
+}
+
+.profileImgContainer {
+  display: block;
+  width: 100%;
+  padding-top: 3em;
+  margin-bottom: 1em;
+}
+
+.profileImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+}
+
+.introContainer {
+  line-height: 1.3em;
+  font-weight: 400;
+  font-size: 1.3em;
+}
+
+.fancyGradient {
+  position: relative;
+  display: inline-block;
+  padding: 0.2em;
+}
+
+.fancyGradient::before {
+  content: "";
+  position: absolute;
+  padding: 0.2em;
+  top: 0.2em;
+  right: 0;
+  left: 0;
+  bottom: 0.2em;
+  background: linear-gradient(270deg, #27c200, #00a5c2, #000cff, #b200f0, #ff0000);
+  background-size: 400% 400%;
+  animation: gradient 7s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.fancyName {
+  position: relative;
+}
+
+.blurbContainer {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  line-height: 1.3em;
+  font-weight: 300;
+  font-size: 1em;
+  padding: 0.6em;
+  margin: 2em;
+}
+
+.blurbContainer p {
+  color: #ffffffdc;
+  padding: 0.3em 0.1em;
+}
+
+.socialLink {
+  padding: 0 0.4em;
+}
+
+.socialImg {
+  width: 2em;
+  height: 2em;
+}
+
+/* Begin scroll chevron styles */
+
+.scrollContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 5em;
+  cursor: pointer;
+}
+
+.chevronContainer {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+}
+
+.scrollChevron {
+  position: absolute;
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+
+.scrollChevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.scrollChevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.scrollChevron:before,
+.scrollChevron:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background: #fff;
+}
+
+.scrollChevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.scrollChevron:after {
+  right: 0;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+/* End scroll animation styles */

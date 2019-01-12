@@ -1,0 +1,86 @@
+.sectionHeader {
+  text-align: center;
+}
+
+.sectionHeader > h1 {
+  font-size: 1.3em;
+  padding: 0.7em 0;
+}
+
+.sectionArea {
+  margin-top: 0.5em;
+  background-color: #1f1f1f;
+}
+
+.project {
+  border-top: 1px solid #424242;
+  padding: 1em;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.projImgContainer {
+  width: 30%;
+}
+
+.projDescContainer {
+  width: 70%;
+}
+
+.projDescTitle {
+  font-size: 1.3em;
+}
+
+.projDesc {
+  margin: 0.5em;
+  font-size: 0.85em;
+  line-height: 1.2em;
+}
+
+.projImg {
+  width: 75%;
+  height: 75%;
+}
+
+.projLink {
+  width: 100%;
+  text-align: left;
+}
+
+.fancyLink {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 1.6em;
+}
+
+.fancyLinkText {
+  position: relative;
+  display: inline-block;
+}
+
+.fancyLinkText::before,
+.fancyLinkText::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform-origin: left center;
+}
+
+.fancyLinkText::before {
+  background: linear-gradient(135deg, #27c200, #00a5c2);
+}
+
+.fancyLinkText::after {
+  background: #fff;
+  transform: scaleX(0);
+  transition: transform 0.5s cubic-bezier(0.51, 0.92, 0.24, 1) 0.1s;
+}
+
+.fancyLink:hover .fancyLinkText::after {
+  transform: scaleX(1);
+}

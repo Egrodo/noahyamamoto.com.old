@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Space+Mono|Work+Sans");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: white;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: "Work Sans", sans-serif;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-family: "Space Mono", monospace;
+  letter-spacing: 0.05em;
+}
+
+p {
+  color: #ffffff99;
+  padding: 0;
+  margin: 0;
+}
