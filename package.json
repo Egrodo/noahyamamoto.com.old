@@ -14,7 +14,11 @@
   "dependencies": {
     "gatsby": "^2.0.76",
     "gatsby-image": "^2.0.26",
+    "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-sharp": "^2.0.17",
+    "gatsby-source-filesystem": "^2.0.16",
+    "gatsby-transformer-json": "^2.1.7",
+    "gatsby-transformer-remark": "^2.2.0",
     "gatsby-transformer-sharp": "^2.1.10",
     "normalize.css": "^8.0.1",
     "react": "^16.5.1",

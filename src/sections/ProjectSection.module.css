@@ -15,9 +15,7 @@
 .project {
   border-top: 1px solid #424242;
   padding: 1em;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -40,6 +38,7 @@
 }
 
 .projImg {
+  position: inherit;
   width: 75%;
   height: 75%;
 }
@@ -50,7 +49,6 @@
 }
 
 .fancyLink {
-  display: -ms-inline-flexbox;
   display: inline-flex;
   line-height: 1.6em;
 }
