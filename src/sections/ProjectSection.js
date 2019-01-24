@@ -1,6 +1,5 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
 import CSS from "./ProjectSection.module.css";
 
 const ProjectSection = () => (
@@ -13,7 +12,7 @@ const ProjectSection = () => (
         </div>
         <div className={CSS.sectionArea}>
           {data.allProjectsJson.edges.map(({ node }, i) => (
-            <div className={CSS.project}>
+            <div className={CSS.project} key={`${node.title}_${i}`}>
               <div className={CSS.projImgContainer}>
                 <img
                   src={node.image.childImageSharp.fixed.src}

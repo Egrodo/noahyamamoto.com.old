@@ -88,24 +88,33 @@ export const query = graphql`
     instaImg: file(relativePath: { eq: "instagram.png" }) {
       relativePath
       childImageSharp {
-        fixed(width: 150, height: 150) {
+        fixed(width: 32, height: 32) {
           src
+          srcSet
+          width
+          height
         }
       }
     }
     linkedinImg: file(relativePath: { eq: "linkedin.png" }) {
       relativePath
       childImageSharp {
-        fixed(width: 150, height: 150) {
+        fixed(width: 32, height: 32) {
           src
+          srcSet
+          width
+          height
         }
       }
     }
     githubImg: file(relativePath: { eq: "github.png" }) {
       relativePath
       childImageSharp {
-        fixed(width: 150, height: 150) {
+        fixed(width: 32, height: 32) {
           src
+          srcSet
+          width
+          height
         }
       }
     }
