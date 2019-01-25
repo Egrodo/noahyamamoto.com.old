@@ -1,6 +1,8 @@
 import React from "react";
+import FancyLink from "../components/FancyLink";
+import { Link as InternalLink, StaticQuery } from "gatsby";
+
 import CSS from "./BlogSection.module.css";
-import { Link, StaticQuery } from "gatsby";
 
 const BlogSection = () => {
   return (
@@ -29,9 +31,9 @@ const BlogSection = () => {
                 <div className={CSS.blogTitle}>
                   <div className={CSS.postTitle}>
                     <h2>
-                      <Link to={node.frontmatter.path}>
+                      <InternalLink to={node.frontmatter.path}>
                         {node.frontmatter.title}
-                      </Link>
+                      </InternalLink>
                     </h2>
                   </div>
                   <div className={CSS.postDate}>
@@ -41,14 +43,14 @@ const BlogSection = () => {
 
                 <p className={CSS.blogDesc}>{node.frontmatter.excerpt}</p>
                 <div className={CSS.blogLink}>
-                  <Link
-                    className={CSS.fancyLink}
+                  <FancyLink
                     to={node.frontmatter.path}
                     target="_blank"
                     rel="noopener noreferrer"
+                    internal
                   >
                     <span className={CSS.fancyLinkText}> Read More... </span>
-                  </Link>
+                  </FancyLink>
                 </div>
               </div>
             ))}

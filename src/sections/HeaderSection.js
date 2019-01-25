@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "gatsby-image";
+import { StaticQuery, graphql } from "gatsby";
+import FancyLink from "../components/FancyLink";
 
 import CSS from "./HeaderSection.module.css";
-import { StaticQuery, graphql } from "gatsby";
 
 const HeaderSection = () => (
   <StaticQuery
@@ -34,6 +35,14 @@ const HeaderSection = () => (
               web and have worked for cool companies like Marvel, Refugees
               United, and Squarespace (2019)
             </p>
+            <FancyLink
+              to="#resume"
+              style={{
+                fontFamily: "Work Sans"
+              }}
+            >
+              Full Résumé
+            </FancyLink>
           </div>
           <div className={CSS.socialContainer}>
             <a

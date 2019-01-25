@@ -7,7 +7,7 @@ class Canvas extends React.Component {
     this.state = {
       cHeight: window.innerHeight,
       cWidth: window.innerWidth,
-      running: false,
+      running: false
     };
 
     this.canvas = React.createRef();
@@ -58,7 +58,7 @@ class Canvas extends React.Component {
       lastY = currY;
 
       // Fade out the previous tails
-      ctx.fillStyle = `rgba(0, 0, 0, 0.1)`;
+      ctx.fillStyle = `rgba(0, 0, 0, 0.2)`;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       requestAnimationFrame(update);
@@ -79,7 +79,14 @@ class Canvas extends React.Component {
 
   render() {
     const { cHeight, cWidth } = this.state;
-    return <canvas ref={this.canvas} className={CSS.canvas} width={cWidth} height={cHeight} />;
+    return (
+      <canvas
+        ref={this.canvas}
+        className={CSS.canvas}
+        width={cWidth}
+        height={cHeight}
+      />
+    );
   }
 }
 

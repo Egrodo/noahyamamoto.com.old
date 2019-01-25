@@ -1,5 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
+import FancyLink from "../components/FancyLink";
+
 import CSS from "./ProjectSection.module.css";
 
 const ProjectSection = () => (
@@ -24,14 +26,9 @@ const ProjectSection = () => (
                 <h2 className={CSS.projDescTitle}>{node.title}</h2>
                 <p className={CSS.projDesc}>{node.description}</p>
                 <div className={CSS.projLink}>
-                  <a
-                    className={CSS.fancyLink}
-                    href={node.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className={CSS.fancyLinkText}> Check it out </span>
-                  </a>
+                  <FancyLink to={node.link} newTab>
+                    Check it out
+                  </FancyLink>
                 </div>
               </div>
             </div>

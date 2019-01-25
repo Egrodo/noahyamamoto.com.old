@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "gatsby-image";
+import { StaticQuery, graphql } from "gatsby";
+import FancyLink from "../components/FancyLink";
 
 import CSS from "./ContactSection.module.css";
-import { StaticQuery, graphql } from "gatsby";
 
 const ContactSection = () => (
   <StaticQuery
@@ -12,22 +13,16 @@ const ContactSection = () => (
       const instaImg = data.instaImg.childImageSharp.fixed;
       const linkedinImg = data.linkedinImg.childImageSharp.fixed;
 
+      // TODO: Protect email from spammers somehow
       return (
         <section className={CSS.Contact} id="Contact">
           <div className={CSS.sectionHeader}>
             <h1>Contact</h1>
             <div className={CSS.sectionArea}>
               <div className={CSS.emailLink}>
-                <a
-                  className={CSS.fancyLink}
-                  href="mailto:noahryamamoto@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className={`${CSS.fancyLinkText} ${CSS.email}`}>
-                    NoahRYamamoto@gmail.com
-                  </span>
-                </a>
+                <FancyLink to="mailto:noahryamamoto@gmail.com" newTab animated>
+                  NoahRYamamoto@gmail.com
+                </FancyLink>
               </div>
               <p className={CSS.contactDesc}>
                 Feel free to drop me an email if you have any inquiries or
@@ -73,7 +68,7 @@ const ContactSection = () => (
                 </a>
               </div>
               <h5 className={CSS.copyright}>
-                Copyright &copy; | {new Date().getFullYear()}
+                Noah Yamamoto | &copy; {new Date().getFullYear()}
               </h5>
             </div>
           </div>
