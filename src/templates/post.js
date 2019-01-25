@@ -1,5 +1,5 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React from 'react';
+import { graphql } from 'gatsby';
 
 export default function Template({ data }) {
   const { markdownRemark: post } = data;

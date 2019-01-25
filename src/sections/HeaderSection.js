@@ -1,14 +1,14 @@
-import React from "react";
-import Image from "gatsby-image";
-import { StaticQuery, graphql } from "gatsby";
-import FancyLink from "../components/FancyLink";
+import React from 'react';
+import Image from 'gatsby-image';
+import { StaticQuery, graphql } from 'gatsby';
+import FancyLink from '../components/FancyLink';
 
-import CSS from "./HeaderSection.module.css";
+import CSS from './HeaderSection.module.css';
 
 const HeaderSection = () => (
   <StaticQuery
     query={query}
-    render={data => {
+    render={(data) => {
       const profilePic = data.profilePic.childImageSharp.fixed;
       const githubImg = data.githubImg.childImageSharp.fixed;
       const instaImg = data.instaImg.childImageSharp.fixed;
@@ -24,21 +24,21 @@ const HeaderSection = () => (
             />
           </div>
           <div className={CSS.introContainer}>
-            <div>Hi there, I'm</div>
+            <div>Hi there, I&apos;m</div>
             <span className={CSS.fancyGradient}>
               <span className={CSS.fancyName}>Noah Yamamoto</span>
             </span>
           </div>
           <div className={CSS.blurbContainer}>
             <p>
-              I'm a CIS student at Baruch College. I love making things on the
+              I&apos;m a CIS student at Baruch College. I love making things on the
               web and have worked for cool companies like Marvel, Refugees
               United, and Squarespace (2019)
             </p>
             <FancyLink
               to="#resume"
               style={{
-                fontFamily: "Work Sans"
+                fontFamily: 'Work Sans',
               }}
             >
               Full Résumé

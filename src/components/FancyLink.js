@@ -1,9 +1,13 @@
-import React from "react";
-import { Link as InternalLink } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import CSS from "./FancyLink.module.css";
+import { Link as InternalLink } from 'gatsby';
 
-const FancyLink = ({ to, children, style, animated, newTab, internal }) => {
+import CSS from './FancyLink.module.css';
+
+const FancyLink = ({
+  to, children, style, animated, newTab, internal,
+}) => {
   const { fancyLink } = CSS;
   return internal ? (
     <InternalLink to={to} className={fancyLink}>
@@ -15,17 +19,32 @@ const FancyLink = ({ to, children, style, animated, newTab, internal }) => {
     <a
       href={to}
       className={CSS.fancyLink}
-      target={newTab ? "_blank" : "_self"}
-      rel={newTab ? "noopener noreferrer" : ""}
+      target={newTab ? '_blank' : '_self'}
+      rel={newTab ? 'noopener noreferrer' : ''}
     >
-      <span
-        className={`${CSS.fancyLinkText} ${animated && CSS.animated}`}
-        style={style}
-      >
+      <span className={`${CSS.fancyLinkText} ${animated && CSS.animated}`} style={style}>
         {children}
       </span>
     </a>
   );
+};
+
+FancyLink.propTypes = {
+  to: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])),
+  animated: PropTypes.bool,
+  newTab: PropTypes.bool,
+  internal: PropTypes.bool,
+};
+
+FancyLink.defaultProps = {
+  to: '#',
+  children: 'ERROR',
+  style: {},
+  animated: false,
+  newTab: false,
+  internal: false,
 };
 
 export default FancyLink;

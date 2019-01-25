@@ -1,14 +1,14 @@
-import React from "react";
-import Image from "gatsby-image";
-import { StaticQuery, graphql } from "gatsby";
-import FancyLink from "../components/FancyLink";
+import React from 'react';
+import Image from 'gatsby-image';
+import { StaticQuery, graphql } from 'gatsby';
+import FancyLink from '../components/FancyLink';
 
-import CSS from "./ContactSection.module.css";
+import CSS from './ContactSection.module.css';
 
 const ContactSection = () => (
   <StaticQuery
     query={query}
-    render={data => {
+    render={(data) => {
       const githubImg = data.githubImg.childImageSharp.fixed;
       const instaImg = data.instaImg.childImageSharp.fixed;
       const linkedinImg = data.linkedinImg.childImageSharp.fixed;
@@ -26,7 +26,7 @@ const ContactSection = () => (
               </div>
               <p className={CSS.contactDesc}>
                 Feel free to drop me an email if you have any inquiries or
-                suggestions. I'm always looking for new opportunities to expand
+                suggestions. I&apos;m always looking for new opportunities to expand
                 my skillset.
               </p>
               <div className={`${CSS.socialContainer} ${CSS.contact}`}>
@@ -68,7 +68,9 @@ const ContactSection = () => (
                 </a>
               </div>
               <h5 className={CSS.copyright}>
-                Noah Yamamoto | &copy; {new Date().getFullYear()}
+                Noah Yamamoto | &copy;
+                {' '}
+                {new Date().getFullYear()}
               </h5>
             </div>
           </div>

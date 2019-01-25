@@ -1,8 +1,8 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import FancyLink from "../components/FancyLink";
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import FancyLink from '../components/FancyLink';
 
-import CSS from "./ProjectSection.module.css";
+import CSS from './ProjectSection.module.css';
 
 const ProjectSection = () => (
   <StaticQuery
@@ -13,8 +13,8 @@ const ProjectSection = () => (
           <h1>Projects</h1>
         </div>
         <div className={CSS.sectionArea}>
-          {data.allProjectsJson.edges.map(({ node }, i) => (
-            <div className={CSS.project} key={`${node.title}_${i}`}>
+          {data.allProjectsJson.edges.map(({ node }) => (
+            <div className={CSS.project} key={node.title}>
               <div className={CSS.projImgContainer}>
                 <img
                   src={node.image.childImageSharp.fixed.src}
