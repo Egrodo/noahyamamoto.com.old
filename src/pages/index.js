@@ -15,7 +15,7 @@ const indexPage = () => (
       <Canvas />
       <HeaderSection />
     </header>
-    <div className="sectionHeader">
+    <div className="sectionHeader" id="Projects">
       <h1>Projects</h1>
     </div>
     <div className="content">

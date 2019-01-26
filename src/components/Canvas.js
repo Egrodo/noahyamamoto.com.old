@@ -5,8 +5,8 @@ class Canvas extends React.Component {
     super();
 
     this.state = {
-      cHeight: window.innerHeight,
-      cWidth: window.innerWidth,
+      cHeight: 0,
+      cWidth: 0,
     };
 
     this.canvas = React.createRef();
@@ -18,9 +18,9 @@ class Canvas extends React.Component {
 
     window.addEventListener(
       'resize',
-      ({ target: { innerWidth, innerHeight } }) => {
-        canvas.width = innerWidth;
-        canvas.height = innerHeight;
+      () => {
+        canvas.width = document.body.clientWidth;
+        canvas.height = document.body.clientHeight;
       },
       false,
     );
@@ -33,6 +33,12 @@ class Canvas extends React.Component {
     // If we detect a mousemove event once, that means the user is browsing with a mouse.
     // If we don't, it's probably a touchscreen, don't waste computation.
     window.addEventListener('mousemove', mouseMove, false);
+
+    // Set height and width on didMount because if set in state body isn't defined yet.
+    this.setState({
+      cHeight: document.body.clientHeight,
+      cWidth: document.body.clientWidth,
+    });
   }
 
   startAnimation() {

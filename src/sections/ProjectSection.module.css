@@ -84,4 +84,16 @@
   }
 }
 
+@media only screen and (min-width: 1800px) {
+  .projDescContainer {
+    align-self: normal;
+    font-size: 22px;
+  }
+
+  .projDesc {
+    margin: 1em;
+    width: 1000px;
+  }
+}
+
 /* End breakpoints */

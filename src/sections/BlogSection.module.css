@@ -123,4 +123,10 @@
   }
 }
 
+@media only screen and (min-width: 1800px) {
+  .blogPost {
+    font-size: 22px;
+  }
+}
+
 /* End breakpoints */

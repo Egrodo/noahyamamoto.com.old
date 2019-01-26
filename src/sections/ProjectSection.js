@@ -8,7 +8,7 @@ const ProjectSection = () => (
   <StaticQuery
     query={query}
     render={data => (
-      <section className={CSS.Projects} id="Projects">
+      <section className={CSS.Projects}>
         <div className={CSS.sectionArea}>
           {data.allProjectsJson.edges.map(({ node }) => (
             <div className={CSS.project} key={node.title}>

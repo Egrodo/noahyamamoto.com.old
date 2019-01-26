@@ -72,7 +72,7 @@
   padding: 0.6em;
   margin: 2em;
 }
-.blurbContainer p {
+.blurbContainer > p {
   color: #ffffffdc;
   padding: 0.3em 0;
 }
@@ -150,10 +150,11 @@
 
 /* Begin breakpoints */
 
+/* TODO: Space things more, bigger picture  */
 @media only screen and (min-width: 700px) {
   .blurbContainer {
     width: 500px;
-    margin: 2em auto;
+    margin: 1.8em auto;
   }
 
   .blurbContainer > p {
@@ -161,4 +162,32 @@
   }
 }
 
+@media only screen and (min-height: 900px) {
+  .profileImgContainer {
+    margin-bottom: 2em;
+  }
+
+  .profileImg {
+    width: 200px;
+    height: 200px;
+  }
+
+  .introContainer {
+    font-size: 1.5em;
+  }
+
+  .blurbContainer {
+    font-size: 18px;
+    padding: 1em;
+  }
+
+  .blurbContainer > p {
+    padding-bottom: .8em;
+  }
+
+  .socialImg {
+    width: 38px;
+    height: 38px;
+  }
+}
 /* End breakpoints */

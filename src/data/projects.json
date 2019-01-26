@@ -14,7 +14,7 @@
   {
     "title": "NoahYamamoto.com",
     "image": "../images/stars.png",
-    "description": "This very website! I coded this site from scratch using lots of modern features and techniques like HTML5 Canvas and templating engines.",
+    "description": "This very website! I coded this site from scratch using lots of modern features and techniques including SSR with GatsbyJS, data management with GraphQL, and HTML5 Canvas.",
     "link": "https://github.com/Egrodo/noahyamamoto.com"
   }
 ]
