@@ -42,3 +42,13 @@ p {
   padding: 0;
   margin: 0;
 }
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.content {
+  position: relative;
+  background: black;
+}

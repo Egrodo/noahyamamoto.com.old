@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'gatsby-image';
 import { StaticQuery, graphql } from 'gatsby';
 import FancyLink from '../components/FancyLink';
 
@@ -17,11 +16,7 @@ const HeaderSection = () => (
       return (
         <header className={CSS.Header}>
           <div className={CSS.profileImgContainer}>
-            <Image
-              fixed={profilePic}
-              className={CSS.profileImg}
-              alt="Noah Yamamoto"
-            />
+            <img src={profilePic.src} className={CSS.profileImg} alt="Noah Yamamoto" />
           </div>
           <div className={CSS.introContainer}>
             <div>Hi there, I&apos;m</div>
@@ -51,8 +46,8 @@ const HeaderSection = () => (
               rel="noopener noreferrer"
               className={CSS.socialLink}
             >
-              <Image
-                fixed={instaImg}
+              <img
+                src={instaImg.src}
                 className={CSS.socialImg}
                 alt="Instagram Link"
               />
@@ -63,8 +58,8 @@ const HeaderSection = () => (
               rel="noopener noreferrer"
               className={CSS.socialLink}
             >
-              <Image
-                fixed={linkedinImg}
+              <img
+                src={linkedinImg.src}
                 className={CSS.socialImg}
                 alt="Linkedin Link"
               />
@@ -75,8 +70,8 @@ const HeaderSection = () => (
               rel="noreferrer noopener"
               className={CSS.socialLink}
             >
-              <Image
-                fixed={githubImg}
+              <img
+                src={githubImg.src}
                 className={CSS.socialImg}
                 alt="Github Link"
               />
