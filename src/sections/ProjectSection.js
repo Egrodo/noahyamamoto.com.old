@@ -9,9 +9,6 @@ const ProjectSection = () => (
     query={query}
     render={data => (
       <section className={CSS.Projects} id="Projects">
-        <div className={CSS.sectionHeader}>
-          <h1>Projects</h1>
-        </div>
         <div className={CSS.sectionArea}>
           {data.allProjectsJson.edges.map(({ node }) => (
             <div className={CSS.project} key={node.title}>

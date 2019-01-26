@@ -13,7 +13,6 @@ body {
   padding: 0;
   background-color: black;
   font-family: "Work Sans", sans-serif;
-  max-width: 500px;
 }
 
 canvas {
@@ -48,7 +47,18 @@ p {
   top: 0;
 }
 
+.sectionHeader {
+  text-align: center;
+  background-image: linear-gradient(to top, black 0px, black 10px, transparent);
+  position: relative;
+}
+
+.sectionHeader > h1 {
+  font-size: 1.3em;
+  padding: 0.5em 0;
+}
+
 .content {
   position: relative;
-  background: black;
+  background-color: black;
 }

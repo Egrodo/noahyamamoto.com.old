@@ -74,7 +74,7 @@
 }
 .blurbContainer p {
   color: #ffffffdc;
-  padding: 0.3em 0.1em;
+  padding: 0.3em 0;
 }
 .socialLink {
   padding: 0 0.4em;
@@ -147,3 +147,18 @@
   }
 }
 /* End scroll animation styles */
+
+/* Begin breakpoints */
+
+@media only screen and (min-width: 700px) {
+  .blurbContainer {
+    width: 500px;
+    margin: 2em auto;
+  }
+
+  .blurbContainer > p {
+    padding: 0.5em 0;
+  }
+}
+
+/* End breakpoints */

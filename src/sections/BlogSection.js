@@ -39,17 +39,18 @@ const BlogSection = () => (
                   <span>{node.frontmatter.date}</span>
                 </div>
               </div>
-
-              <p className={CSS.blogDesc}>{node.frontmatter.excerpt}</p>
-              <div className={CSS.blogLink}>
-                <FancyLink
-                  to={node.frontmatter.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  internal
-                >
-                  <span className={CSS.fancyLinkText}> Read More... </span>
-                </FancyLink>
+              <div className={CSS.blogContent}>
+                <p className={CSS.blogDesc}>{node.frontmatter.excerpt}</p>
+                <div className={CSS.blogLink}>
+                  <FancyLink
+                    to={node.frontmatter.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    internal
+                  >
+                    <span className={CSS.fancyLinkText}> Read More... </span>
+                  </FancyLink>
+                </div>
               </div>
             </div>
           ))}

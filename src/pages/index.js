@@ -8,12 +8,16 @@ import ContactSection from '../sections/ContactSection';
 import 'normalize.css';
 import './index.css';
 
+// sectionHeader needs to be outside of content so it can have a transparent bg.
 const indexPage = () => (
   <>
     <header className="header">
       <Canvas />
       <HeaderSection />
     </header>
+    <div className="sectionHeader">
+      <h1>Projects</h1>
+    </div>
     <div className="content">
       <ProjectSection />
       <BlogSection />

@@ -40,3 +40,20 @@
   font-size: 1.2em;
   color: #919191;
 }
+
+/* Begin breakpoints */
+
+@media only screen and (min-width: 700px) {
+  .contactDesc {
+    width: 600px;
+    margin: 1em auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .sectionArea {
+    font-size: 18px;
+  }
+}
+
+/* End breakpoints */
