@@ -1,13 +1,3 @@
-.sectionHeader {
-  text-align: center;
-  background-image: linear-gradient(to top, black 0px, black 10px, transparent);
-}
-
-.sectionHeader > h1 {
-  font-size: 1.3em;
-  padding: 0.5em 0;
-}
-
 .sectionArea {
   background-color: #1f1f1f;
 }

@@ -16,7 +16,16 @@ const indexPage = () => (
       <HeaderSection />
     </header>
     <div className="sectionHeader" id="Projects">
-      <h1>Projects</h1>
+      <h1>
+        <a
+          href="https://github.com/egrodo"
+          target="_blank"
+          rel="noopener noreferrer"
+          alt="Link to my Github"
+        >
+          Projects
+        </a>
+      </h1>
     </div>
     <div className="content">
       <ProjectSection />

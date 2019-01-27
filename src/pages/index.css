@@ -42,6 +42,8 @@ p {
   margin: 0;
 }
 
+/* Other */
+
 .header {
   position: sticky;
   top: 0;
@@ -55,7 +57,7 @@ p {
 
 .sectionHeader > h1 {
   font-size: 1.3em;
-  padding: 0.5em 0;
+  padding: 1.2em 0;
 }
 
 .content {
