@@ -34,9 +34,9 @@ class Canvas extends React.Component {
     // If we don't, it's probably a touchscreen, don't waste computation.
     window.addEventListener('mousemove', mouseMove, false);
 
-    // Set height and width on didMount because if set in state body isn't defined yet.
+    // Set height and width on load because if set in state body isn't defined yet.
     this.setState({
-      cHeight: document.body.clientHeight,
+      cHeight: document.body.clientWidth,
       cWidth: document.body.clientWidth,
     });
   }

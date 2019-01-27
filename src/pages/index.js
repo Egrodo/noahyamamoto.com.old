@@ -27,3 +27,5 @@ const indexPage = () => (
 );
 
 export default indexPage;
+
+// TODO: New canvas effect, make bg #666.

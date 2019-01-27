@@ -97,8 +97,6 @@ export const query = graphql`
         fixed(width: 300, height: 300) {
           src
           srcSet
-          width
-          height
         }
       }
     }
@@ -108,8 +106,6 @@ export const query = graphql`
         fixed(width: 64, height: 64) {
           src
           srcSet
-          width
-          height
         }
       }
     }
@@ -119,8 +115,6 @@ export const query = graphql`
         fixed(width: 64, height: 64) {
           src
           srcSet
-          width
-          height
         }
       }
     }
@@ -130,8 +124,6 @@ export const query = graphql`
         fixed(width: 64, height: 64) {
           src
           srcSet
-          width
-          height
         }
       }
     }
