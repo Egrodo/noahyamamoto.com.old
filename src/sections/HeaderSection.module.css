@@ -186,4 +186,10 @@
   }
 }
 
+@media only screen and (max-height: 650px) {
+  .scrollContainer {
+    position: relative;
+  }
+}
+
 /* End breakpoints */
