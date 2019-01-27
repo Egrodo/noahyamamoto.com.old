@@ -118,14 +118,14 @@
 
 @media only screen and (min-width: 1500px) {
   .blogPost {
-    grid-template-columns: 0.7fr 1.3fr;
+    grid-template-columns: 0.4fr 1.6fr;
     padding: 2em 4em;
   }
 }
 
 @media only screen and (min-width: 1800px) {
   .blogPost {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
