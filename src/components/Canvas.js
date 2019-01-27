@@ -72,9 +72,9 @@ class Canvas extends React.Component {
     // On mouse move update.
     window.addEventListener(
       'mousemove',
-      ({ pageX, pageY }) => {
-        currX = pageX;
-        currY = pageY;
+      ({ clientX, clientY }) => {
+        currX = clientX;
+        currY = clientY;
       },
       false,
     );
