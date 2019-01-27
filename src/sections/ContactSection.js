@@ -3,7 +3,7 @@ import Image from 'gatsby-image';
 import { StaticQuery, graphql } from 'gatsby';
 import FancyLink from '../components/FancyLink';
 
-import CSS from './ContactSection.module.css';
+import CSS from '../css/ContactSection.module.css';
 
 const ContactSection = () => (
   <StaticQuery

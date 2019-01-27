@@ -2,7 +2,7 @@ import React from 'react';
 import { Link as InternalLink, StaticQuery, graphql } from 'gatsby';
 import FancyLink from '../components/FancyLink';
 
-import CSS from './BlogSection.module.css';
+import CSS from '../css/BlogSection.module.css';
 
 const BlogSection = () => (
   <StaticQuery
@@ -10,8 +10,8 @@ const BlogSection = () => (
     render={({ allMarkdownRemark: { edges } }) => (
       <section className={CSS.Blog} id="Blog">
         <div className={CSS.sectionHeader}>
-          <a
-            href="{{ site.url }}/blog"
+          <InternalLink
+            to="BlogIndex"
             className={CSS.headerLink}
             target="_blank"
             rel="noopener noreferrer"
@@ -19,7 +19,7 @@ const BlogSection = () => (
             title="Click to go to blog index"
           >
             <h1>Write-Ups</h1>
-          </a>
+          </InternalLink>
         </div>
         <div className={CSS.sectionArea}>
           {edges.map(({ node }) => (

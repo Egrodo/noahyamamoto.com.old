@@ -1,19 +1,19 @@
 [
   {
     "title": "Choochoo",
-    "image": "../images/choochoo.png",
+    "image": "choochoo.png",
     "description": "A progressive web application that gives you real-time updates of weather and train status at any MTA station in NYC. Frontend made with React Hooks and includes an Expressjs backend to parse and serve data from the MTA.",
     "link": "https://github.com/Egrodo/choochoo#readme"
   },
   {
     "title": "Sudoku",
-    "image": "../images/sudoku.png",
+    "image": "sudoku.png",
     "description": "My first progressive web app, a simple but featureful Sudoku game that uses a custom algorithm to generate infinite puzzles of varying difficulty.",
     "link": "https://github.com/Egrodo/sudoku#readme"
   },
   {
     "title": "NoahYamamoto.com",
-    "image": "../images/profileArt.png",
+    "image": "profileArt.png",
     "description": "This very website! I coded this site from scratch using lots of modern features and techniques including SSR with GatsbyJS, data management with GraphQL, and HTML5 Canvas.",
     "link": "https://github.com/Egrodo/noahyamamoto.com"
   }

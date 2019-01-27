@@ -2,7 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import FancyLink from '../components/FancyLink';
 
-import CSS from './ProjectSection.module.css';
+import CSS from '../css/ProjectSection.module.css';
 
 const ProjectSection = () => (
   <StaticQuery
