@@ -14,13 +14,13 @@ class Canvas extends React.Component {
   }
 
   componentDidMount() {
-    const canvas = this.canvas.current;
-
     window.addEventListener(
       'resize',
       () => {
-        canvas.width = document.body.clientWidth;
-        canvas.height = document.body.clientHeight;
+        this.setState({
+          cHeight: document.body.clientHeight,
+          cWidth: document.body.clientWidth,
+        });
       },
       false,
     );
@@ -36,7 +36,7 @@ class Canvas extends React.Component {
 
     // Set height and width on load because if set in state body isn't defined yet.
     this.setState({
-      cHeight: document.body.clientWidth,
+      cHeight: document.body.clientHeight,
       cWidth: document.body.clientWidth,
     });
   }
@@ -84,14 +84,7 @@ class Canvas extends React.Component {
 
   render() {
     const { cHeight, cWidth } = this.state;
-    return (
-      <canvas
-        ref={this.canvas}
-        className={CSS.canvas}
-        width={cWidth}
-        height={cHeight}
-      />
-    );
+    return <canvas ref={this.canvas} className={CSS.canvas} width={cWidth} height={cHeight} />;
   }
 }
 
