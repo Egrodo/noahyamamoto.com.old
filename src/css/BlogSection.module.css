@@ -65,7 +65,6 @@
   text-align: right;
 }
 
-
 /* Begin breakpoints */
 
 @media only screen and (min-width: 700px) {
@@ -81,9 +80,9 @@
 @media only screen and (min-width: 900px) {
   .blogPost {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.4fr 1.6fr;
     grid-template-rows: 1fr;
-    grid-template-areas: ". .";
+    grid-template-areas: '. .';
   }
 
   .blogTitle {
@@ -95,7 +94,7 @@
 
   .postTitle {
     font-size: 1.2em;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
 
   .postDate {
@@ -107,6 +106,7 @@
 
   .blogDesc {
     width: auto;
+    padding-left: 4.5em;
   }
 }
 
@@ -118,7 +118,6 @@
 
 @media only screen and (min-width: 1500px) {
   .blogPost {
-    grid-template-columns: 0.4fr 1.6fr;
     padding: 2em 4em;
   }
 }

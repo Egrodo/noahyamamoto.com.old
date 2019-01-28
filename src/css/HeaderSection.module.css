@@ -31,21 +31,14 @@
 }
 
 .fancyGradient::before {
-  content: "";
+  content: '';
   position: absolute;
   padding: 0.2em;
   top: 0.2em;
   right: 0;
   left: 0;
   bottom: 0.2em;
-  background: linear-gradient(
-    270deg,
-    #27c200,
-    #00a5c2,
-    #000cff,
-    #b200f0,
-    #ff0000
-  );
+  background: linear-gradient(270deg, #27c200, #00a5c2, #000cff, #b200f0, #ff0000);
   background-size: 400% 400%;
   animation: gradient 7s linear infinite;
 }
@@ -114,7 +107,7 @@
 }
 .scrollChevron:before,
 .scrollChevron:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   height: 100%;
@@ -147,49 +140,39 @@
   }
 }
 /* End scroll animation styles */
-
 /* Begin breakpoints */
-
-/* TODO: Space things more, bigger picture  */
+/* TODO: Space things more, bigger picture */
 @media only screen and (min-width: 700px) {
   .blurbContainer {
     width: 500px;
     margin: 1.8em auto;
   }
-
   .blurbContainer > p {
     padding: 0.5em 0;
   }
 }
-
 @media only screen and (min-height: 900px) {
   .profileImgContainer {
     margin-bottom: 2em;
   }
-
   .profileImg {
     width: 200px;
     height: 200px;
   }
-
   .introContainer {
     font-size: 1.5em;
   }
-
   .blurbContainer {
     font-size: 18px;
-    padding: 1em;
+    padding: 0.8em;
   }
-
   .blurbContainer > p {
-    padding-bottom: .8em;
+    padding-bottom: 0.8em;
   }
 }
-
 @media only screen and (max-height: 650px) {
   .scrollContainer {
     position: relative;
   }
 }
-
 /* End breakpoints */

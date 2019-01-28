@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Link as InternalLink } from 'gatsby';
 
-import CSS from './FancyLink.module.css';
+import CSS from '../css/FancyLink.module.css';
 
 const FancyLink = ({
   to, children, style, animated, newTab, internal,
@@ -11,7 +11,7 @@ const FancyLink = ({
   const { fancyLink } = CSS;
   return internal ? (
     <InternalLink to={to} className={fancyLink}>
-      <span className={CSS.fancyLinkText} style={style}>
+      <span className={`${CSS.fancyLinkText} ${animated && CSS.animated}`} style={style}>
         {children}
       </span>
     </InternalLink>

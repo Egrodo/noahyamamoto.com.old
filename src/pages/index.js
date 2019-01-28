@@ -6,7 +6,7 @@ import BlogSection from '../sections/BlogSection';
 import ContactSection from '../sections/ContactSection';
 
 import 'normalize.css';
-import './index.css';
+import '../css/index.css';
 
 // sectionHeader needs to be outside of content so it can have a transparent bg.
 const indexPage = () => (

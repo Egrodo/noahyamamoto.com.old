@@ -25,9 +25,8 @@ const ContactSection = () => (
                 </FancyLink>
               </div>
               <p className={CSS.contactDesc}>
-                Feel free to drop me an email if you have any inquiries or
-                suggestions. I&apos;m always looking for new opportunities to expand
-                my skillset.
+                Feel free to drop me an email if you have any inquiries or suggestions. I&apos;m
+                always looking for new opportunities to expand my skillset.
               </p>
               <div className={`${CSS.socialContainer} ${CSS.contact}`}>
                 <a
@@ -36,11 +35,7 @@ const ContactSection = () => (
                   rel="noopener noreferrer"
                   className={CSS.socialLink}
                 >
-                  <Image
-                    fixed={instaImg}
-                    className={CSS.socialImg}
-                    alt="Instagram Link"
-                  />
+                  <Image fixed={instaImg} className={CSS.socialImg} alt="Instagram Link" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/~noah"
@@ -48,11 +43,7 @@ const ContactSection = () => (
                   rel="noopener noreferrer"
                   className={CSS.socialLink}
                 >
-                  <Image
-                    fixed={linkedinImg}
-                    className={CSS.socialImg}
-                    alt="Linkedin Link"
-                  />
+                  <Image fixed={linkedinImg} className={CSS.socialImg} alt="Linkedin Link" />
                 </a>
                 <a
                   href="https://github.com/Egrodo/"
@@ -60,11 +51,7 @@ const ContactSection = () => (
                   rel="noopener noreferrer"
                   className={CSS.socialLink}
                 >
-                  <Image
-                    fixed={githubImg}
-                    className={CSS.socialImg}
-                    alt="Github Link"
-                  />
+                  <Image fixed={githubImg} className={CSS.socialImg} alt="Github Link" />
                 </a>
               </div>
               <h5 className={CSS.copyright}>

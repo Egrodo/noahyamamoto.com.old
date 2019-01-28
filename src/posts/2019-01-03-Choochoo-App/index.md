@@ -1,18 +1,16 @@
 ---
 layout: post
-path: "/ChooChoo-App"
+path: '/ChooChoo-App'
 title: Choochoo App
-date: "2019-01-03"
-excerpt: A writeup on Choochoo, my personal project that gives you real-time updates of weather and train status at any  MTA station in NYC.
+date: '2019-01-03'
+excerpt: In my final project for the CIS2200 class I was TA'ing for I knew I wanted to make something that the students might find useful. I thought about the painpoints in my day, and being a New Yorker, the MTA instantly came to mind.
 ---
 
-<h1 align="center">Choochoo</h1>
-<p align="center">A PWA that gives you real-time updates of weather and train status at any MTA station in NYC.</p>
+In my final project for the CIS2200 class I was TA'ing for I knew I wanted to make something that the students might find useful. I thought about the painpoints in my day, and being a New Yorker, the MTA instantly came to mind.
+
 <p align="center">
   <img src="https://i.imgur.com/kpTRta1.png" alt="choochoo" width="300">
 </p>
-<p>
-  In my final project for the CIS2200 class I was TA'ing for I knew I wanted to make something that the students might find useful. I thought about the painpoints in my day, and being a New Yorker, the MTA instantly came to mind.
 
 Any New Yorker could attest to the frustration of arriving at the station just for the train to be leaving, forcing you to be wait tens of minutes for the next train, potentially making you late. Being someone who is obsessed with optimizing processes I came up with Choochoo, an app to display arrival times with a simple and pleasant interface while also providing the extra value of showing the weather conditions.
 
