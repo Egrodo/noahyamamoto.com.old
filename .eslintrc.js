@@ -7,5 +7,6 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': 0,
     'no-use-before-define': 0,
+    "no-console": 0,
   }
 };

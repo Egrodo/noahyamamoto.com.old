@@ -9,21 +9,37 @@
 
 .postHeader {
   width: 100%;
-  background-color: #1f1f1f;
-  border-bottom: 1px solid #424242;
+  /* display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr; */
+}
+
+.topHeader {
   padding: 0.5em;
-  display: grid;
-  grid-template-columns: 0.5fr 2fr 0.5fr;
+  background-color: #1f1f1f;
 }
 
 .nameContainer {
   display: inline-block;
   text-align: center;
+  width: 100%;
   font-size: 1.3em;
 }
 
-.link {
+/* TODO: Put this back in a grid when desktop */
+.leftArrowLink,
+.rightArrowLink {
   display: inherit;
+  position: fixed;
+  z-index: 2;
+  top: 18px;
+}
+
+.leftArrowLink {
+  left: 30px;
+}
+
+.rightArrowLink {
+  right: 45px;
 }
 
 /* nav arrow stuff */
@@ -74,3 +90,24 @@
 }
 
 /* end nav arrow stuff */
+
+.bottomHeader {
+  background-color: #1f1f1f;
+  border-bottom: 1px solid #424242;
+  padding: .5em 0;
+  text-align: center;
+}
+
+.stickyHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.postDate {
+  /* margin-top: .3em;  */
+}
+
+.postContent {
+  margin: 1em;
+}
