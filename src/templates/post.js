@@ -3,8 +3,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Canvas from '../components/Canvas';
-import CSS from '../css/postTemplate.module.css';
+import ContactSection from '../sections/ContactSection';
 import FancyLink from '../components/FancyLink';
+
+
+import CSS from '../css/postTemplate.module.css';
 
 // TODO: See mockup. Keep arrows fixed to top, when scroll over fix post title on top too.
 export default class Template extends React.Component {
@@ -80,6 +83,7 @@ export default class Template extends React.Component {
           <div className={CSS.postContent}>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
+          <ContactSection footer />
         </div>
       </>
     );

@@ -1,11 +1,12 @@
 import React from 'react';
 import Image from 'gatsby-image';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import FancyLink from '../components/FancyLink';
 
 import CSS from '../css/ContactSection.module.css';
 
-const ContactSection = () => (
+const ContactSection = ({ footer }) => (
   <StaticQuery
     query={query}
     render={(data) => {
@@ -17,7 +18,7 @@ const ContactSection = () => (
       return (
         <section className={CSS.Contact} id="Contact">
           <div className={CSS.sectionHeader}>
-            <h1>Contact</h1>
+            {!footer && <h1>Contact</h1>}
             <div className={CSS.sectionArea}>
               <div className={CSS.emailLink}>
                 <FancyLink to="mailto:noahryamamoto@gmail.com" newTab animated>
@@ -66,6 +67,15 @@ const ContactSection = () => (
     }}
   />
 );
+
+
+ContactSection.propTypes = {
+  footer: PropTypes.bool,
+};
+
+ContactSection.defaultProps = {
+  footer: false,
+};
 
 export const query = graphql`
   query ContactQuery {
