@@ -1,4 +1,6 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Canvas from '../components/Canvas';
 import CSS from '../css/postTemplate.module.css';
@@ -11,26 +13,33 @@ export default class Template extends React.Component {
 
     this.stickyRef = React.createRef();
     this.fakeStickyRef = React.createRef();
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', (() => {
-      const { current: sticky } = this.stickyRef;
-      const { current: fakeSticky } = this.fakeStickyRef;
-      if (sticky.classList.contains(CSS.stickyHeader)) {
-        // If it contains it, we're looking to remove it.
-        // Remove it if our scroll hits the top of where it should be.
-        if (window.pageYOffset < fakeSticky.offsetTop) {
-          sticky.classList.remove(CSS.stickyHeader);
-          fakeSticky.style.display = 'none';
-        } // Else do nothing.
-      } else if (window.pageYOffset > sticky.offsetTop) {
-        // If it does not contain it, we're looking to add it.
-        // Add it if our scroll hits the top of where it is.
-        sticky.classList.add(CSS.stickyHeader);
-        fakeSticky.style.display = 'block';
-      }
-    }));
+    window.addEventListener('scroll', this.handleScroll, false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll, false);
+  }
+
+  handleScroll() {
+    const { current: sticky } = this.stickyRef;
+    const { current: fakeSticky } = this.fakeStickyRef;
+    if (sticky.classList.contains(CSS.stickyHeader)) {
+      // If it contains it, we're looking to remove it.
+      // Remove it if our scroll hits the top of where it should be.
+      if (window.pageYOffset < fakeSticky.offsetTop) {
+        sticky.classList.remove(CSS.stickyHeader);
+        fakeSticky.style.display = 'none';
+      } // Else do nothing.
+    } else if (window.pageYOffset > sticky.offsetTop) {
+      // If it does not contain it, we're looking to add it.
+      // Add it if our scroll hits the top of where it is.
+      sticky.classList.add(CSS.stickyHeader);
+      fakeSticky.style.display = 'block';
+    }
   }
 
   render() {
@@ -76,6 +85,14 @@ export default class Template extends React.Component {
     );
   }
 }
+
+Template.propTypes = {
+  data: PropTypes.objectOf(PropTypes.object),
+};
+
+Template.defaultProps = {
+  data: {},
+};
 
 export const postQuery = graphql`
   query BlogPostByPath($path: String!) {

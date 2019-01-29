@@ -8,9 +8,7 @@ excerpt: In my final project for the CIS2200 class I was TA'ing for I knew I wan
 
 In my final project for the CIS2200 class I was TA'ing for I knew I wanted to make something that the students might find useful. I thought about the painpoints in my day, and being a New Yorker, the MTA instantly came to mind.
 
-<p align="center">
-  <img src="https://i.imgur.com/kpTRta1.png" alt="choochoo" width="300">
-</p>
+![choochoo image](https://i.imgur.com/kpTRta1.png)
 
 Any New Yorker could attest to the frustration of arriving at the station just for the train to be leaving, forcing you to be wait tens of minutes for the next train, potentially making you late. Being someone who is obsessed with optimizing processes I came up with Choochoo, an app to display arrival times with a simple and pleasant interface while also providing the extra value of showing the weather conditions.
 
@@ -20,7 +18,6 @@ The goal with this project, like with all my personal projects, was to learn as 
 
 I'd recommend checking out the [source of the backend server](https://github.com/Egrodo/choochooServer) to see how I battled against the MTA API to get workable data, and the [entrypoint to my React frontend](https://github.com/Egrodo/choochoo/blob/master/src/components/App.js) to see the cool tricks I used to make a lightweight and optimized PWA.
 
-</p>
 <h3 align="center">
 <a href="https://choochoo.app/">Check it out here!</a>
 </h3>

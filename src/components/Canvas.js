@@ -56,7 +56,7 @@ class Canvas extends React.Component {
       ctx.lineWidth = 7;
       ctx.moveTo(lastX, lastY);
       ctx.lineTo(currX, currY);
-      ctx.strokeStyle = '#b200f0';
+      ctx.strokeStyle = '#fff';
       ctx.stroke();
 
       lastX = currX;
