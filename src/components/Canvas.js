@@ -1,19 +1,16 @@
 import React from 'react';
 
+// TODO: Refactor this. make it not work on mobile?
 class Canvas extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
+  state = {
       cHeight: 0,
       cWidth: 0,
     };
 
-    this.canvas = React.createRef();
-    this.startAnimation = this.startAnimation.bind(this);
-  }
+  canvas = React.createRef();
+  
 
-  componentDidMount() {
+  componentDidMount = () => {
     window.addEventListener(
       'resize',
       () => {
@@ -41,7 +38,7 @@ class Canvas extends React.Component {
     });
   }
 
-  startAnimation() {
+  startAnimation = () => {
     const canvas = this.canvas.current;
     const ctx = canvas.getContext('2d');
 
@@ -82,7 +79,7 @@ class Canvas extends React.Component {
     update();
   }
 
-  render() {
+  render = () => {
     const { cHeight, cWidth } = this.state;
     return <canvas ref={this.canvas} className={CSS.canvas} width={cWidth} height={cHeight} />;
   }

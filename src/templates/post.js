@@ -11,23 +11,18 @@ import CSS from '../css/postTemplate.module.css';
 
 // TODO: See mockup. Keep arrows fixed to top, when scroll over fix post title on top too.
 export default class Template extends React.Component {
-  constructor(props) {
-    super(props);
+  stickyRef = React.createRef();
+  fakeStickyRef = React.createRef();
 
-    this.stickyRef = React.createRef();
-    this.fakeStickyRef = React.createRef();
-    this.handleScroll = this.handleScroll.bind(this);
-  }
-
-  componentDidMount() {
+  componentDidMount = () => {
     window.addEventListener('scroll', this.handleScroll, false);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount = () => {
     window.removeEventListener('scroll', this.handleScroll, false);
   }
 
-  handleScroll() {
+  handleScroll = () => {
     const { current: sticky } = this.stickyRef;
     const { current: fakeSticky } = this.fakeStickyRef;
     if (sticky.classList.contains(CSS.stickyHeader)) {
@@ -45,7 +40,7 @@ export default class Template extends React.Component {
     }
   }
 
-  render() {
+  render = () =>  {
     const { data: { markdownRemark: post } } = this.props;
     return (
       <>

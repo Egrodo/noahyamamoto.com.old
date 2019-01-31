@@ -42,6 +42,7 @@
   background-size: 400% 400%;
   animation: gradient 7s linear infinite;
 }
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -53,9 +54,11 @@
     background-position: 0% 50%;
   }
 }
+
 .fancyName {
   position: relative;
 }
+
 .blurbContainer {
   background-color: rgba(255, 255, 255, 0.16);
   border-radius: 10px;
@@ -63,19 +66,23 @@
   font-weight: 300;
   font-size: 1em;
   padding: 0.6em;
-  margin: 2em;
+  margin: 2em 2em 1em 2em;
 }
+
 .blurbContainer > p {
   color: #ffffffdc;
   padding: 0.3em 0;
 }
+
 .socialLink {
-  padding: 0 0.4em;
+  padding: 0 0.5em;
 }
+
 .socialImg {
-  width: 2em;
-  height: 2em;
+  width: 2.3em;
+  height: 2.3em;
 }
+
 /* Begin scroll chevron styles */
 .scrollContainer {
   position: absolute;
@@ -85,12 +92,14 @@
   margin-bottom: 5em;
   cursor: pointer;
 }
+
 .chevronContainer {
   position: relative;
   width: 24px;
   height: 24px;
   margin: 0 auto;
 }
+
 .scrollChevron {
   position: absolute;
   width: 28px;
@@ -99,12 +108,15 @@
   transform: scale3d(0.5, 0.5, 0.5);
   animation: move 3s ease-out infinite;
 }
+
 .scrollChevron:first-child {
   animation: move 3s ease-out 1s infinite;
 }
+
 .scrollChevron:nth-child(2) {
   animation: move 3s ease-out 2s infinite;
 }
+
 .scrollChevron:before,
 .scrollChevron:after {
   content: '';
@@ -114,14 +126,17 @@
   width: 50%;
   background: #fff;
 }
+
 .scrollChevron:before {
   left: 0;
   transform: skew(0deg, 30deg);
 }
+
 .scrollChevron:after {
   right: 0;
   transform: skew(0deg, -30deg);
 }
+
 @keyframes move {
   25% {
     opacity: 1;
@@ -139,8 +154,11 @@
     transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
   }
 }
+
 /* End scroll animation styles */
+
 /* Begin breakpoints */
+
 /* TODO: Space things more, bigger picture */
 @media only screen and (min-width: 700px) {
   .blurbContainer {
@@ -151,6 +169,7 @@
     padding: 0.5em 0;
   }
 }
+
 @media only screen and (min-height: 900px) {
   .profileImgContainer {
     margin-bottom: 2em;
@@ -170,6 +189,7 @@
     padding-bottom: 0.8em;
   }
 }
+
 @media only screen and (max-height: 650px) {
   .scrollContainer {
     position: relative;
