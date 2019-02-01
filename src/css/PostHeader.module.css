@@ -1,8 +1,6 @@
-
 .postHeader {
   width: 100%;
-  /* display: grid;
-  grid-template-columns: 0.5fr 2fr 0.5fr; */
+
 }
 
 .topHeader {
@@ -17,7 +15,6 @@
   font-size: 1.3em;
 }
 
-/* TODO: Put this back in a grid when desktop */
 .leftArrowLink,
 .rightArrowLink {
   display: inherit;

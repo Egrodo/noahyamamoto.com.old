@@ -1,7 +1,9 @@
 import React from 'react';
 
-// Class for point math.
+/* Mouse trail adapted from a jQuery Codepen by Bryan C https://codepen.io/bryjch/pen/QEoXwA */
+
 class Point {
+  // Class for point math.
   constructor(x, y) {
     this.x = x;
     this.y = y;

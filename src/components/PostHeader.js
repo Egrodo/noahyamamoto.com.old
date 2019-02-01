@@ -95,7 +95,7 @@ class PostHeader extends React.Component {
           ref={this.fakeStickyRef}
         >
           <h2 className={CSS.postTitle}>{post.frontmatter.title}</h2>
-          <span className={CSS.postDate}>{post.frontmatter.date}</span>
+          <p className={CSS.postDate}>{post.frontmatter.date}</p>
         </div>
         <div className={CSS.bottomHeader} ref={this.stickyRef}>
           <h2 className={CSS.postTitle}>{post.frontmatter.title}</h2>

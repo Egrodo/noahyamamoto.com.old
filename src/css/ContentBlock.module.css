@@ -1,0 +1,202 @@
+/* Start blog specific */
+.blogPost {
+  border-top: 1px solid #424242;
+  padding: 1em;
+}
+
+.headerLink > h1 {
+  font-size: 1.3em;
+  padding: 0.7em 0;
+}
+
+.blogTitle {
+  width: 100%;
+  margin-bottom: 0.7em;
+  display: flex;
+}
+
+.leftInline {
+  display: inline-block;
+  text-align: left;
+}
+
+.rightInline {
+  display: inline-block;
+  text-align: right;
+}
+
+.postTitle {
+  width: 100%;
+}
+
+.postTitle > h2 {
+  font-size: 1.4em;
+}
+
+.postDate {
+  color: #a0a0a0;
+  text-align: right;
+  width: 50%;
+}
+
+.blogDesc {
+  margin: 0.5em;
+}
+
+.blogLink {
+  width: 100%;
+  text-align: right;
+}
+
+/* Begin breakpoints */
+
+@media only screen and (min-width: 700px) {
+  .blogPost {
+    padding: 1em 50px;
+  }
+  .blogDesc {
+    margin: 1em auto;
+    width: 600px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .blogPost {
+    display: grid;
+    grid-template-columns: 0.4fr 1.6fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: '. .';
+  }
+
+  .blogTitle {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .postTitle {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+  }
+
+  .postDate {
+    width: auto;
+    display: block;
+    text-align: left;
+    font-size: 1em;
+  }
+
+  .blogDesc {
+    width: auto;
+    padding-left: 4.5em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .blogPost {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .blogPost {
+    padding: 2em 4em;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .blogPost {
+    font-size: 20px;
+  }
+}
+
+/* End breakpoints */
+/* End blog specific */
+/* Begin project specific*/
+
+.project {
+  border-top: 1px solid #424242;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.projImgContainer {
+  width: 30%;
+}
+
+.projDescContainer {
+  width: 70%;
+}
+
+.projDescTitle {
+  font-size: 1.3em;
+}
+
+.projDesc {
+  margin: 0.5em;
+  font-size: 0.85em;
+  line-height: 1.2em;
+}
+
+.projImg {
+  position: inherit;
+  width: 75%;
+  height: 75%;
+}
+
+.projLink {
+  width: 100%;
+  text-align: left;
+}
+
+/* Begin breakpoints */
+@media only screen and (min-width: 700px) {
+  .projImgContainer {
+    width: 20%;
+    height: 20%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .projImgContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 15%;
+    height: 15%;
+  }
+
+  .projDescContainer {
+    width: 80%;
+    padding: 0 50px;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .project {
+    padding: 2em 0;
+  }
+  .projImgContainer {
+    width: 12%;
+    height: 12%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .projDescContainer {
+    align-self: normal;
+    font-size: 20px;
+  }
+
+  .projDesc {
+    margin: 1em;
+    width: 1000px;
+  }
+}
+
+/* End breakpoints */
+/* End project specific */
