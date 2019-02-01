@@ -99,10 +99,12 @@
 .stickyHeader {
   position: fixed;
   top: 0;
+  z-index: 1;
   width: 100%;
 }
 
-/* BUG: This changes sizes on stickying on mobile */
+/* BUG: FancyLinks go on top of my sticky header */
 .postDate {
   font-size: 1em;
+  height: 1em;
 }

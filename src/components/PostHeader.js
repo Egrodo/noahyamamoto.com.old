@@ -108,7 +108,7 @@ class PostHeader extends React.Component {
 }
 
 PostHeader.propTypes = {
-  post: PropTypes.objectOf(PropTypes.object).isRequired,
+  post: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
   listData: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
