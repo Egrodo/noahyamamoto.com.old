@@ -1,6 +1,38 @@
 import React from 'react';
 
-// TODO: Refactor this. make it not work on mobile?
+// Class for point math.
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.lifetime = 0;
+  }
+
+  // Get the distance between a & b
+  static distance(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  // Get the mid point between a & b
+  static midPoint(a, b) {
+    const mx = a.x + (b.x - a.x) * 0.5;
+    const my = a.y + (b.y - a.y) * 0.5;
+
+    return new Point(mx, my);
+  }
+
+  // Get the angle between a & b
+  static angle(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+
+    return Math.atan2(dy, dx);
+  }
+}
+
 class Canvas extends React.Component {
   state = {
     cHeight: 0,
@@ -22,14 +54,7 @@ class Canvas extends React.Component {
       false,
     );
 
-    const mouseMove = () => {
-      window.removeEventListener('mousemove', mouseMove, false);
-      this.startAnimation();
-    };
-
-    // If we detect a mousemove event once, that means the user is browsing with a mouse.
-    // If we don't, it's probably a touchscreen, don't waste computation.
-    window.addEventListener('mousemove', mouseMove, false);
+    this.startAnimation();
 
     // Set height and width on load because if set in state body isn't defined yet.
     this.setState({
@@ -42,44 +67,67 @@ class Canvas extends React.Component {
     const canvas = this.canvas.current;
     const ctx = canvas.getContext('2d');
 
-    // Use a closure here to keep internal state.
-    let lastX = 0;
-    let lastY = 0;
-    let currX = 0;
-    let currY = 0;
+    const points = [];
 
-    const update = () => {
-      ctx.beginPath();
-      ctx.lineWidth = 7;
-      ctx.moveTo(lastX, lastY);
-      ctx.lineTo(currX, currY);
-      ctx.strokeStyle = '#fff';
-      ctx.stroke();
-
-      lastX = currX;
-      lastY = currY;
-
-      // Fade out the previous tails
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      requestAnimationFrame(update);
+    const addPoint = (x, y) => {
+      const point = new Point(x, y);
+      points.push(point);
     };
 
-    // On mouse move update.
-    window.addEventListener(
-      'mousemove',
-      ({ clientX, clientY }) => {
-        currX = clientX;
-        currY = clientY;
-      },
-      false,
-    );
+    document.addEventListener('mousemove', ({ clientX, clientY }) => {
+      addPoint(clientX - canvas.offsetLeft, clientY - canvas.offsetTop);
+    }, false);
 
-    update();
+    const animatePoints = () => {
+      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+      const duration = 0.7 * (1 * 1000) / 60; // Last 80% of a frame per point
+
+      let point;
+      let lastPoint;
+
+      for (let i = 0; i < points.length; ++i) {
+        point = points[i];
+        if (points[i - 1] !== undefined) {
+          lastPoint = points[i - 1];
+        } else lastPoint = points; // TODO: Does this need to be points[i]?
+
+        point.lifetime += 1;
+
+        if (point.lifetime > duration) {
+          // If the point dies, remove it.
+          points.shift();
+        } else {
+          // Otherwise animate it.
+
+          // As the lifetime goes on, inc goes from 0 to 1.
+          const inc = (point.lifetime / duration);
+          const spreadRate = 7 * (1 - inc);
+
+          ctx.lineJoin = 'round';
+          ctx.lineWidth = spreadRate;
+
+          // As time increases decrease r and b, increase g to go from purple to green.
+          const red = Math.floor(190 - (190 * inc));
+          const green = 0;
+          const blue = Math.floor(210 + (210 * inc));
+          ctx.strokeStyle = `rgb(${red},${green},${blue}`;
+
+          ctx.beginPath();
+
+          ctx.moveTo(lastPoint.x, lastPoint.y);
+          ctx.lineTo(point.x, point.y);
+
+          ctx.stroke();
+          ctx.closePath();
+        }
+      }
+      requestAnimationFrame(animatePoints);
+    };
+
+
+    // TODO: If active (mobile).
+    animatePoints();
   }
-
-  updateMousePosition = ({ clientX, clientY }) => ({ currX: clientX, currY: clientY })
 
   render = () => {
     const { cHeight, cWidth } = this.state;
