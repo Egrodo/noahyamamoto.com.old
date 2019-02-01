@@ -103,7 +103,6 @@
   width: 100%;
 }
 
-/* BUG: FancyLinks go on top of my sticky header */
 .postDate {
   font-size: 1em;
   height: 1em;

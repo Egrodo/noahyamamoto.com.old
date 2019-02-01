@@ -79,6 +79,8 @@ class Canvas extends React.Component {
     update();
   }
 
+  updateMousePosition = ({ clientX, clientY }) => ({ currX: clientX, currY: clientY })
+
   render = () => {
     const { cHeight, cWidth } = this.state;
     return <canvas ref={this.canvas} className={CSS.canvas} width={cWidth} height={cHeight} />;

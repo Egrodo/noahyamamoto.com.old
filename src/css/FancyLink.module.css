@@ -29,7 +29,8 @@
   transition: transform 0.5s cubic-bezier(0.51, 0.92, 0.24, 1) 0.1s;
 }
 
-.fancyLink:hover .fancyLinkText::after {
+.fancyLink:hover .fancyLinkText::after,
+.fancyLink:active .fancyLinkText::after {
   transform: scaleX(1);
 }
 

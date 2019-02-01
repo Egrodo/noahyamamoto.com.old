@@ -24,10 +24,10 @@ class PostHeader extends React.Component {
     for (let i = 0; i < listData.length; ++i) {
       if (listData[i].node.id === currPost.id) {
         // When we find ours, add the previous and next then break (we only need one of each per page).
-        this.setState(() => ({
+        this.setState({
           prevPost: (listData[i - 1] && listData[i - 1].node) || false,
           nextPost: (listData[i + 1] && listData[i + 1].node) || false,
-        }), () => console.log(this.state));
+        });
         // One of these will be undefined if we're on the first or last post.
         break;
       }
@@ -62,7 +62,6 @@ class PostHeader extends React.Component {
   render = () => {
     const { post } = this.props;
     const { prevPost, nextPost } = this.state;
-    console.log(prevPost, nextPost);
     return (
       <header className={CSS.postHeader}>
         <div className={CSS.topHeader}>
