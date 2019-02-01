@@ -1,32 +1,33 @@
+/* eslint-disable no-script-url */
 import React from 'react';
-import { graphql, StaticQuery } from 'gatsby';
-import FancyLink from "./FancyLink";
+import PropTypes from 'prop-types';
+import FancyLink from './FancyLink';
 
 import CSS from '../css/PostHeader.module.css';
 
 class PostHeader extends React.Component {
   stickyRef = React.createRef();
+
   fakeStickyRef = React.createRef();
+
   state = {
     prevPost: false,
-    nextPost: false
+    nextPost: false,
   };
 
   componentDidMount = () => {
     // On mount, calculate the prev/next links.
     const { post: currPost } = this.props;
     const { listData } = this.props;
-    
+
     // Loop through the listData, when we find our post we can infer prev and next links from the list.
     for (let i = 0; i < listData.length; ++i) {
       if (listData[i].node.id === currPost.id) {
         // When we find ours, add the previous and next then break (we only need one of each per page).
-        this.setState(() => {
-          return {
-            prevPost: (listData[i-1] && listData[i-1].node) || false,
-            nextPost: (listData[i+1] && listData[i+1].node) || false,
-          };
-        }, () => console.log(this.state));
+        this.setState(() => ({
+          prevPost: (listData[i - 1] && listData[i - 1].node) || false,
+          nextPost: (listData[i + 1] && listData[i + 1].node) || false,
+        }), () => console.log(this.state));
         // One of these will be undefined if we're on the first or last post.
         break;
       }
@@ -104,7 +105,11 @@ class PostHeader extends React.Component {
       </header>
     );
   }
-};
+}
 
+PostHeader.propTypes = {
+  post: PropTypes.objectOf(PropTypes.object).isRequired,
+  listData: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default PostHeader;

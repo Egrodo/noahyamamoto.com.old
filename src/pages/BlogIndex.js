@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link as InternalLink, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 import CSS from '../css/BlogIndex.module.css';
 
 // sectionHeader needs to be outside of content so it can have a transparent bg.
@@ -15,7 +16,6 @@ const BlogIndex = ({ data }) => {
   );
 };
 
-// TODO: Limit and paginate.
 export const pageQuery = graphql`
   query postsQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
@@ -33,5 +33,9 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+BlogIndex.propTypes = {
+  data: PropTypes.objectOf(PropTypes.object).isRequired,
+};
 
 export default BlogIndex;

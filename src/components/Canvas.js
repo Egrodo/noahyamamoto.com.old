@@ -3,12 +3,12 @@ import React from 'react';
 // TODO: Refactor this. make it not work on mobile?
 class Canvas extends React.Component {
   state = {
-      cHeight: 0,
-      cWidth: 0,
-    };
+    cHeight: 0,
+    cWidth: 0,
+  };
 
   canvas = React.createRef();
-  
+
 
   componentDidMount = () => {
     window.addEventListener(

@@ -37,7 +37,7 @@
 /* If no more posts in given direction, hide */
 .leftArrowLink.disabled,
 .rightArrowLink.disabled {
-  visibility: hidden;
+  display: none;
 }
 
 /* nav arrow stuff */
