@@ -62,7 +62,7 @@ const BlogSection = () => (
 
 export const query = graphql`
   query BlogQuery {
-    allMarkdownRemark(limit: 3) {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 3) {
       edges {
         node {
           frontmatter {

@@ -43,6 +43,12 @@ class Canvas extends React.Component {
 
 
   componentDidMount = () => {
+    // Set height and width on load because if set in state body isn't defined yet.
+    this.setState({
+      cHeight: document.body.clientHeight,
+      cWidth: document.body.clientWidth,
+    });
+
     window.addEventListener(
       'resize',
       () => {
@@ -54,16 +60,14 @@ class Canvas extends React.Component {
       false,
     );
 
-    this.startAnimation();
-
-    // Set height and width on load because if set in state body isn't defined yet.
-    this.setState({
-      cHeight: document.body.clientHeight,
-      cWidth: document.body.clientWidth,
-    });
+    // If the device supports cursors, start animation.
+    if (matchMedia('(pointer:fine)').matches) {
+      this.startAnimation();
+    }
   }
 
   startAnimation = () => {
+    console.log('starting anim');
     const canvas = this.canvas.current;
     const ctx = canvas.getContext('2d');
 
@@ -124,8 +128,6 @@ class Canvas extends React.Component {
       requestAnimationFrame(animatePoints);
     };
 
-
-    // TODO: If active (mobile).
     animatePoints();
   }
 

@@ -42,25 +42,30 @@ p {
   margin: 0;
 }
 
-/* Other */
+p::selection {
+  background-color: #00a5c2;
+  color: #f3f3f3;
+}
 
-.header {
+/* End globals */
+
+.IndexHeader {
   position: sticky;
   top: 0;
 }
 
-.sectionHeader {
+.IndexSectionHeader {
   text-align: center;
   background-image: linear-gradient(to top, black 0px, black 10px, transparent);
   position: relative;
 }
 
-.sectionHeader > h1 {
+.IndexSectionHeader > h1 {
   font-size: 1.3em;
   padding: 1.2em 0;
 }
 
-.content {
+.IndexContent {
   position: relative;
   background-color: black;
 }

@@ -11,11 +11,11 @@ import '../css/index.css';
 // sectionHeader needs to be outside of content so it can have a transparent bg.
 const indexPage = () => (
   <>
-    <header className="header">
+    <header className="IndexHeader">
       <Canvas />
       <HeaderSection />
     </header>
-    <div className="sectionHeader" id="Projects">
+    <div className="IndexSectionHeader" id="Projects">
       <h1>
         <a
           href="https://github.com/egrodo"
@@ -27,7 +27,7 @@ const indexPage = () => (
         </a>
       </h1>
     </div>
-    <div className="content">
+    <div className="IndexContent">
       <ProjectSection />
       <BlogSection />
       <ContactSection />
