@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': 0,
     "babel/semi": 0,
+    "babel/camelcase": 0,
     'no-use-before-define': 0,
     "no-console": 0,
     "no-plusplus": 0,

@@ -69,7 +69,6 @@ class Canvas extends React.Component {
   }
 
   startAnimation = () => {
-    console.log('starting anim');
     const canvas = this.canvas.current;
     const ctx = canvas.getContext('2d');
 
@@ -95,7 +94,7 @@ class Canvas extends React.Component {
         point = points[i];
         if (points[i - 1] !== undefined) {
           lastPoint = points[i - 1];
-        } else lastPoint = points; // TODO: Does this need to be points[i]?
+        } else lastPoint = point;
 
         point.lifetime += 1;
 

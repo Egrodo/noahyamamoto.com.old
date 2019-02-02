@@ -4,6 +4,7 @@ import FancyLink from '../components/FancyLink';
 
 import CSS from '../css/HeaderSection.module.css';
 
+// TODO: Slide in content somehow.
 const HeaderSection = () => (
   <StaticQuery
     query={query}
