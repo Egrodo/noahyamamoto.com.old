@@ -1,4 +1,5 @@
 import React from 'react';
+import HeadTag from '../components/HeadTag';
 import Canvas from '../components/Canvas';
 import HeaderSection from '../sections/HeaderSection';
 import ProjectSection from '../sections/ProjectSection';
@@ -11,6 +12,7 @@ import '../css/index.css';
 // sectionHeader needs to be outside of content so it can have a transparent bg.
 const indexPage = () => (
   <>
+    <HeadTag />
     <header className="IndexHeader">
       <Canvas />
       <HeaderSection />
