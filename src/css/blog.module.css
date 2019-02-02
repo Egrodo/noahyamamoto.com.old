@@ -1,6 +1,7 @@
-.postHeader {
-  width: 100%;
+/* Start header stuff */
 
+.blogHeader {
+  position: relative;
 }
 
 .topHeader {
@@ -32,4 +33,26 @@
 .postCount {
   font-size: 1em;
   height: 1em;
+}
+
+/* End header stuff */
+
+.content {
+  position: relative;
+  margin-top: 1em;
+}
+
+.indexBlurb {
+  margin: 0 1em;
+  text-align: center;
+}
+
+.postsArea {
+  margin-top: 2em;
+}
+
+.postsArea > div {
+  background-color: #1f1f1f;
+  border-top: 1px solid #424242;
+  border-bottom: 1px solid #424242;
 }

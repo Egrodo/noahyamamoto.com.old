@@ -15,3 +15,8 @@
   margin-top: 0.5em;
   background-color: #1f1f1f;
 }
+
+.headerLink > h1 {
+  font-size: 1.3em;
+  padding: 0.7em 0;
+}

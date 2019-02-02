@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import CSS from '../css/blog.module.css';
 import FancyLink from '../components/FancyLink';
+import ContentBlock from '../components/ContentBlock';
 import ContactSection from '../sections/ContactSection';
+import Canvas from '../components/Canvas';
 
 // Blog index.
 class blog extends React.Component {
@@ -38,11 +40,11 @@ class blog extends React.Component {
   };
 
   render() {
-    // const posts = data.allMarkdownRemark.edges;
-    console.log(this.props);
+    const { data: { allMarkdownRemark: { edges } } } = this.props;
     return (
       <section className={CSS.blog}>
-        <header>
+        <Canvas />
+        <header className={CSS.blogHeader}>
           <div className={CSS.topHeader}>
             <div className={CSS.nameContainer}>
               <FancyLink to="/" internal animated>
@@ -60,11 +62,17 @@ class blog extends React.Component {
           </div>
           <div className={CSS.bottomHeader} ref={this.stickyRef}>
             <h2 className={CSS.postTitle}>Write-Ups</h2>
-            <p className={CSS.postCount}>3 posts</p>
+            <p className={CSS.postCount}>{`${edges.length || 0} posts`}</p>
           </div>
         </header>
         <div className={CSS.content}>
-
+          <p className={CSS.indexBlurb}>
+            Thanks for checking out my blog! Here I plan to post small to medium-length write-ups about various
+            frontend topics from little-known API&apos;s to guides.
+          </p>
+          <div className={CSS.postsArea}>
+            {edges.map(({ node }) => <ContentBlock type="blog" node={node} key={node.frontmatter.title} />)}
+          </div>
           <ContactSection footer />
         </div>
       </section>
@@ -80,9 +88,10 @@ export const pageQuery = graphql`
           id
           excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            path
             title
+            excerpt
+            date(formatString: "MMM Do, YYYY")
+            path
           }
         }
       }
