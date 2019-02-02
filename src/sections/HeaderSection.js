@@ -4,6 +4,53 @@ import FancyLink from '../components/FancyLink';
 
 import CSS from '../css/HeaderSection.module.css';
 
+const query = graphql`
+  query HeaderQuery {
+    resumeLink: allFile(filter: {extension: {eq: "pdf"}}) {
+      edges {
+        node {
+          publicURL
+        }
+      }
+    }
+    profilePic: file(relativePath: {eq: "profilePic.jpeg"}) {
+      childImageSharp {
+        fixed(width: 300, height: 300) {
+          src
+          srcSet
+        }
+      }
+    }
+    instaImg: file(relativePath: {eq: "instagram.png"}) {
+      relativePath
+      childImageSharp {
+        fixed(width: 64, height: 64) {
+          src
+          srcSet
+        }
+      }
+    }
+    linkedinImg: file(relativePath: {eq: "linkedin.png"}) {
+      relativePath
+      childImageSharp {
+        fixed(width: 64, height: 64) {
+          src
+          srcSet
+        }
+      }
+    }
+    githubImg: file(relativePath: {eq: "github.png"}) {
+      relativePath
+      childImageSharp {
+        fixed(width: 64, height: 64) {
+          src
+          srcSet
+        }
+      }
+    }
+  }
+`;
+
 // TODO: Slide in content somehow.
 const HeaderSection = () => (
   <StaticQuery
@@ -93,53 +140,5 @@ const HeaderSection = () => (
     }}
   />
 );
-
-export const query = graphql`
-  query HeaderQuery {
-    resumeLink: allFile(filter: {extension: {eq: "pdf"}}) {
-      edges {
-        node {
-          publicURL
-        }
-      }
-    }
-    profilePic: file(relativePath: {eq: "profilePic.jpeg"}) {
-      childImageSharp {
-        fixed(width: 300, height: 300) {
-          src
-          srcSet
-        }
-      }
-    }
-    instaImg: file(relativePath: {eq: "instagram.png"}) {
-      relativePath
-      childImageSharp {
-        fixed(width: 64, height: 64) {
-          src
-          srcSet
-        }
-      }
-    }
-    linkedinImg: file(relativePath: {eq: "linkedin.png"}) {
-      relativePath
-      childImageSharp {
-        fixed(width: 64, height: 64) {
-          src
-          srcSet
-        }
-      }
-    }
-    githubImg: file(relativePath: {eq: "github.png"}) {
-      relativePath
-      childImageSharp {
-        fixed(width: 64, height: 64) {
-          src
-          srcSet
-        }
-      }
-    }
-  }
-  
-`;
 
 export default HeaderSection;

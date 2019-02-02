@@ -6,6 +6,44 @@ import FancyLink from '../components/FancyLink';
 
 import CSS from '../css/ContactSection.module.css';
 
+const query = graphql`
+  query ContactQuery {
+    instaImg: file(relativePath: { eq: "instagram.png" }) {
+      relativePath
+      childImageSharp {
+        fixed(width: 32, height: 32) {
+          src
+          srcSet
+          width
+          height
+        }
+      }
+    }
+    linkedinImg: file(relativePath: { eq: "linkedin.png" }) {
+      relativePath
+      childImageSharp {
+        fixed(width: 32, height: 32) {
+          src
+          srcSet
+          width
+          height
+        }
+      }
+    }
+    githubImg: file(relativePath: { eq: "github.png" }) {
+      relativePath
+      childImageSharp {
+        fixed(width: 32, height: 32) {
+          src
+          srcSet
+          width
+          height
+        }
+      }
+    }
+  }
+`;
+
 const ContactSection = ({ footer }) => (
   <StaticQuery
     query={query}
@@ -76,43 +114,5 @@ ContactSection.propTypes = {
 ContactSection.defaultProps = {
   footer: false,
 };
-
-export const query = graphql`
-  query ContactQuery {
-    instaImg: file(relativePath: { eq: "instagram.png" }) {
-      relativePath
-      childImageSharp {
-        fixed(width: 32, height: 32) {
-          src
-          srcSet
-          width
-          height
-        }
-      }
-    }
-    linkedinImg: file(relativePath: { eq: "linkedin.png" }) {
-      relativePath
-      childImageSharp {
-        fixed(width: 32, height: 32) {
-          src
-          srcSet
-          width
-          height
-        }
-      }
-    }
-    githubImg: file(relativePath: { eq: "github.png" }) {
-      relativePath
-      childImageSharp {
-        fixed(width: 32, height: 32) {
-          src
-          srcSet
-          width
-          height
-        }
-      }
-    }
-  }
-`;
 
 export default ContactSection;

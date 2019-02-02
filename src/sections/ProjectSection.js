@@ -4,20 +4,7 @@ import ContentBlock from '../components/ContentBlock';
 
 import CSS from '../css/ProjectSection.module.css';
 
-const ProjectSection = () => (
-  <StaticQuery
-    query={query}
-    render={data => (
-      <section className={CSS.Projects}>
-        <div className={CSS.sectionArea}>
-          {data.allProjectsJson.edges.map(({ node }) => <ContentBlock type="project" node={node} key={node.title} />)}
-        </div>
-      </section>
-    )}
-  />
-);
-
-export const query = graphql`
+const query = graphql`
   query ProjectQuery {
     allProjectsJson(limit: 3) {
       edges {
@@ -37,5 +24,18 @@ export const query = graphql`
     }
   }
 `;
+
+const ProjectSection = () => (
+  <StaticQuery
+    query={query}
+    render={data => (
+      <section className={CSS.Projects}>
+        <div className={CSS.sectionArea}>
+          {data.allProjectsJson.edges.map(({ node }) => <ContentBlock type="project" node={node} key={node.title} />)}
+        </div>
+      </section>
+    )}
+  />
+);
 
 export default ProjectSection;
