@@ -134,7 +134,7 @@ class Canvas extends React.Component {
 
   render = () => {
     const { cHeight, cWidth } = this.state;
-    return <canvas ref={this.canvas} className={CSS.canvas} width={cWidth} height={cHeight} />;
+    return <canvas ref={this.canvas} width={cWidth} height={cHeight} />;
   }
 }
 
