@@ -22,7 +22,7 @@ const BlogSection = () => (
           </InternalLink>
         </div>
         <div className={CSS.sectionArea}>
-          {edges.map(({ node }) => <ContentBlock type="blog" node={node} />)}
+          {edges.map(({ node }) => <ContentBlock type="blog" node={node} key={node.frontmatter.title} />)}
         </div>
       </section>
     )}

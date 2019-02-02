@@ -72,4 +72,33 @@
   }
 }
 
+@media only screen and (min-width: 550px) {
+  .postContent p img {
+    width: 300px;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .postContent div {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .postContent div {
+    width: 740px;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .postContent div {
+    width: 1000px;
+  }
+
+  .postContent p {
+    font-size: 1.1em;
+  }
+}
+
 /* end styling markdown content */

@@ -104,3 +104,34 @@
   font-size: 1em;
   height: 1em;
 }
+
+@media only screen and (min-width: 900px) {
+  .leftArrowLink {
+    left: 100px;
+  }
+  
+  .rightArrowLink {
+    right: 115px;
+  }
+}
+
+
+@media only screen and (min-width: 1300px) {
+  .leftArrowLink {
+    left: 300px;
+  }
+  
+  .rightArrowLink {
+    right: 315px;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .leftArrowLink {
+    left: 500px;
+  }
+  
+  .rightArrowLink {
+    right: 515px;
+  }
+}

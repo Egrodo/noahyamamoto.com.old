@@ -22,6 +22,7 @@ const indexPage = () => (
           target="_blank"
           rel="noopener noreferrer"
           alt="Link to my Github"
+          title="Link to my Github"
         >
           Projects
         </a>

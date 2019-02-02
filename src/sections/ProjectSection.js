@@ -10,7 +10,7 @@ const ProjectSection = () => (
     render={data => (
       <section className={CSS.Projects}>
         <div className={CSS.sectionArea}>
-          {data.allProjectsJson.edges.map(({ node }) => <ContentBlock type="project" node={node} />)}
+          {data.allProjectsJson.edges.map(({ node }) => <ContentBlock type="project" node={node} key={node.title} />)}
         </div>
       </section>
     )}

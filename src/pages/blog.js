@@ -80,9 +80,10 @@ class blog extends React.Component {
   }
 }
 
+// When I hit 10 blog posts I need to figure out a pagination thingy.
 export const pageQuery = graphql`
   query postsQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 10) {
       edges {
         node {
           id
