@@ -10,9 +10,9 @@ const ContactSection = ({ footer }) => (
   <StaticQuery
     query={query}
     render={(data) => {
-      const githubImg = data.githubImg.childImageSharp.fixed;
-      const instaImg = data.instaImg.childImageSharp.fixed;
-      const linkedinImg = data.linkedinImg.childImageSharp.fixed;
+      const githubImg = data?.githubImg?.childImageSharp?.fixed;
+      const instaImg = data?.instaImg?.childImageSharp?.fixed;
+      const linkedinImg = data?.linkedinImg?.childImageSharp?.fixed;
 
       // TODO: Protect email from spammers somehow
       return (

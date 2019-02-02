@@ -8,10 +8,12 @@ const HeaderSection = () => (
   <StaticQuery
     query={query}
     render={(data) => {
-      const profilePic = data.profilePic.childImageSharp.fixed;
-      const githubImg = data.githubImg.childImageSharp.fixed;
-      const instaImg = data.instaImg.childImageSharp.fixed;
-      const linkedinImg = data.linkedinImg.childImageSharp.fixed;
+      // @babel/plugin-optional-chaining cause jeez graphql is nested.
+      const resumeLink = data?.resumeLink?.edges[0]?.node?.publicURL;
+      const profilePic = data?.profilePic?.childImageSharp?.fixed;
+      const githubImg = data?.githubImg?.childImageSharp?.fixed;
+      const instaImg = data?.instaImg?.childImageSharp?.fixed;
+      const linkedinImg = data?.linkedinImg?.childImageSharp?.fixed;
 
       return (
         <header className={CSS.Header}>
@@ -31,10 +33,11 @@ const HeaderSection = () => (
               United, and Squarespace (2019)
             </p>
             <FancyLink
-              to="#resume"
+              to={resumeLink}
               style={{
                 fontFamily: 'Work Sans',
               }}
+              newTab
             >
               Full Résumé
             </FancyLink>
@@ -92,7 +95,14 @@ const HeaderSection = () => (
 
 export const query = graphql`
   query HeaderQuery {
-    profilePic: file(relativePath: { eq: "profilePic.jpeg" }) {
+    resumeLink: allFile(filter: {extension: {eq: "pdf"}}) {
+      edges {
+        node {
+          publicURL
+        }
+      }
+    }
+    profilePic: file(relativePath: {eq: "profilePic.jpeg"}) {
       childImageSharp {
         fixed(width: 300, height: 300) {
           src
@@ -100,7 +110,7 @@ export const query = graphql`
         }
       }
     }
-    instaImg: file(relativePath: { eq: "instagram.png" }) {
+    instaImg: file(relativePath: {eq: "instagram.png"}) {
       relativePath
       childImageSharp {
         fixed(width: 64, height: 64) {
@@ -109,7 +119,7 @@ export const query = graphql`
         }
       }
     }
-    linkedinImg: file(relativePath: { eq: "linkedin.png" }) {
+    linkedinImg: file(relativePath: {eq: "linkedin.png"}) {
       relativePath
       childImageSharp {
         fixed(width: 64, height: 64) {
@@ -118,7 +128,7 @@ export const query = graphql`
         }
       }
     }
-    githubImg: file(relativePath: { eq: "github.png" }) {
+    githubImg: file(relativePath: {eq: "github.png"}) {
       relativePath
       childImageSharp {
         fixed(width: 64, height: 64) {
@@ -128,6 +138,7 @@ export const query = graphql`
       }
     }
   }
+  
 `;
 
 export default HeaderSection;
