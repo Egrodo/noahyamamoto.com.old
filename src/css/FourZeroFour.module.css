@@ -8,6 +8,6 @@
   text-align: center;
 }
 
-h1 {
+.content > h1 {
   margin-bottom: 1em;
 }

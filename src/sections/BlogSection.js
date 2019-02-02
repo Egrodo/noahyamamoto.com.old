@@ -10,16 +10,18 @@ const BlogSection = () => (
     render={({ allMarkdownRemark: { edges } }) => (
       <section className={CSS.Blog} id="Blog">
         <div className={CSS.sectionHeader}>
-          <InternalLink
-            to="blog"
-            className={CSS.headerLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            alt="Link to blog"
-            title="Click to go to blog index"
-          >
-            <h1>Write-Ups</h1>
-          </InternalLink>
+          <h1>
+            <InternalLink
+              to="blog"
+              className={CSS.headerLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              alt="Link to blog"
+              title="Click to go to blog index"
+            >
+              Write-Ups
+            </InternalLink>
+          </h1>
         </div>
         <div className={CSS.sectionArea}>
           {edges.map(({ node }) => <ContentBlock type="blog" node={node} key={node.frontmatter.title} />)}

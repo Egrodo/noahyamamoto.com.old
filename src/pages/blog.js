@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import HeadTag from '../components/HeadTag';
 import CSS from '../css/blog.module.css';
 import FancyLink from '../components/FancyLink';
 import ContentBlock from '../components/ContentBlock';
@@ -43,6 +44,7 @@ class blog extends React.Component {
     const { data: { allMarkdownRemark: { edges } } } = this.props;
     return (
       <section className={CSS.blog}>
+        <HeadTag title="Blog Posts" />
         <Canvas />
         <header className={CSS.blogHeader}>
           <div className={CSS.topHeader}>
