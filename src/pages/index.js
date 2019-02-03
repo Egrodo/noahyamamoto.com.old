@@ -22,7 +22,6 @@ const indexPage = () => (
       <h1>
         <InternalLink
           to="projects"
-          className={CSS.headerLink}
           target="_blank"
           rel="noopener noreferrer"
           alt="Link to my projects"
