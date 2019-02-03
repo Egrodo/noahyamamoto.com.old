@@ -1,0 +1,61 @@
+/* Start header stuff */
+
+.projectsHeader {
+  position: relative;
+}
+
+.topHeader {
+  padding: 0.5em;
+  background-color: #1f1f1f;
+}
+
+.nameContainer {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  font-size: 1.3em;
+}
+
+.bottomHeader {
+  background-color: #1f1f1f;
+  border-bottom: 1px solid #424242;
+  padding: .5em 0;
+  text-align: center;
+}
+
+.stickyHeader {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+/* End header stuff */
+
+.content {
+  position: relative;
+  margin-top: 2em;
+}
+
+.indexBlurb {
+  margin: 0 1em;
+  text-align: center;
+}
+
+.GHChart {
+  margin: 1em auto;
+  width: 800px;
+  text-align: center;
+  padding: 1em;
+  background-color: #1f1f1f;
+}
+
+.postsArea {
+  margin-top: 2em;
+}
+
+.postsArea > div {
+  background-color: #1f1f1f;
+  border-top: 1px solid #424242;
+  border-bottom: 1px solid #424242;
+}

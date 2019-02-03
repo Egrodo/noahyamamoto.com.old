@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as InternalLink } from 'gatsby';
 import HeadTag from '../components/HeadTag';
 import Canvas from '../components/Canvas';
 import HeaderSection from '../sections/HeaderSection';
@@ -19,15 +20,16 @@ const indexPage = () => (
     </header>
     <div className="IndexSectionHeader" id="Projects">
       <h1>
-        <a
-          href="https://github.com/egrodo"
+        <InternalLink
+          to="projects"
+          className={CSS.headerLink}
           target="_blank"
           rel="noopener noreferrer"
-          alt="Link to my Github"
-          title="Link to my Github"
+          alt="Link to my projects"
+          title="Link to my projects"
         >
           Projects
-        </a>
+        </InternalLink>
       </h1>
     </div>
     <div className="IndexContent">

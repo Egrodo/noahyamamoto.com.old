@@ -22,7 +22,7 @@ const Template = ({ data }) => (
       <div className={CSS.postContent}>
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       </div>
-      <ContactSection footer />
+      <ContactSection />
     </div>
   </section>
 );

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import HeadTag from '../components/HeadTag';
-import CSS from '../css/blog.module.css';
+import CSS from '../css/projects.module.css';
 import FancyLink from '../components/FancyLink';
 import ContentBlock from '../components/ContentBlock';
 import ContactSection from '../sections/ContactSection';
@@ -11,8 +11,29 @@ import Canvas from '../components/Canvas';
 import 'normalize.css';
 import '../css/index.css';
 
-// Blog index.
-class blog extends React.Component {
+export const pageQuery = graphql`
+  query projectPageQuery {
+    allProjectsJson(limit: 3) {
+      edges {
+        node {
+          title
+          description
+          link
+          image {
+            childImageSharp {
+              fixed {
+                src
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+
+class projects extends React.Component {
   stickyRef = React.createRef();
 
   fakeStickyRef = React.createRef();
@@ -44,12 +65,13 @@ class blog extends React.Component {
   };
 
   render() {
-    const { data: { allMarkdownRemark: { edges } } } = this.props;
+    const { data: { allProjectsJson: { edges } } } = this.props;
+    console.log(edges);
     return (
       <section className={CSS.blog}>
-        <HeadTag title="Blog Posts" />
+        <HeadTag title="Projects" />
         <Canvas />
-        <header className={CSS.blogHeader}>
+        <header className={CSS.projectsHeader}>
           <div className={CSS.topHeader}>
             <div className={CSS.nameContainer}>
               <FancyLink to="/" internal animated>
@@ -62,21 +84,26 @@ class blog extends React.Component {
             style={{ display: 'none', visibility: 'hidden' }}
             ref={this.fakeStickyRef}
           >
-            <h2 className={CSS.postTitle}>Write-Ups</h2>
-            <span className={CSS.postCount}>n posts</span>
+            <h2 className={CSS.postTitle}>Projects</h2>
           </div>
           <div className={CSS.bottomHeader} ref={this.stickyRef}>
-            <h2 className={CSS.postTitle}>Write-Ups</h2>
-            <p className={CSS.postCount}>{`${edges.length || 0} posts`}</p>
+            <h2 className={CSS.postTitle}>Projects</h2>
           </div>
         </header>
         <div className={CSS.content}>
           <p className={CSS.indexBlurb}>
-            Thanks for checking out my blog! Here I plan to post small to medium-length write-ups about various
-            frontend topics from little-known API&apos;s to guides.
+            Below are a few personal projects I&apos;ve done that I&apos;m proud of, to see more check out my&nbsp;
+            <FancyLink to="https://github.com/egrodo" newTab>
+              Github page
+            </FancyLink>
+            !
           </p>
+          {/* TODO: Loading block for this */}
+          <div className={CSS.GHChart}>
+            <img src="https://ghchart.rshah.org/7a0ba5/egrodo" alt="My Github contributions this year" title="My Github contributions this year" />
+          </div>
           <div className={CSS.postsArea}>
-            {edges.map(({ node }) => <ContentBlock type="blog" node={node} key={node.frontmatter.title} />)}
+            {edges.map(({ node }) => <ContentBlock type="project" node={node} key={node.title} />)}
           </div>
           <ContactSection />
         </div>
@@ -85,28 +112,4 @@ class blog extends React.Component {
   }
 }
 
-// When I hit 10 blog posts I need to figure out a pagination thingy.
-export const pageQuery = graphql`
-  query postsQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 10) {
-      edges {
-        node {
-          id
-          excerpt(pruneLength: 250)
-          frontmatter {
-            title
-            excerpt
-            date(formatString: "MMM Do, YYYY")
-            path
-          }
-        }
-      }
-    }
-  }
-`;
-
-blog.propTypes = {
-  data: PropTypes.objectOf(PropTypes.object).isRequired,
-};
-
-export default blog;
+export default projects;

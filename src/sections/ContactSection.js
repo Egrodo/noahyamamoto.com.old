@@ -44,7 +44,7 @@ const query = graphql`
   }
 `;
 
-const ContactSection = ({ footer }) => (
+const ContactSection = () => (
   <StaticQuery
     query={query}
     render={(data) => {
@@ -52,11 +52,9 @@ const ContactSection = ({ footer }) => (
       const instaImg = data?.instaImg?.childImageSharp?.fixed;
       const linkedinImg = data?.linkedinImg?.childImageSharp?.fixed;
 
-      // TODO: Protect email from spammers somehow
       return (
         <section className={CSS.Contact} id="Contact">
           <div className={CSS.sectionHeader}>
-            {!footer && <h1>Contact</h1>}
             <div className={CSS.sectionArea}>
               <div className={CSS.emailLink}>
                 <FancyLink to="mailto:noahryamamoto@gmail.com" newTab animated>

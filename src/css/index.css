@@ -56,7 +56,7 @@ p {
 
 .IndexSectionHeader {
   text-align: center;
-  background-image: linear-gradient(to top, black 0px, black 10px, transparent);
+  background-image: linear-gradient(to top, black 0px, black 35px, transparent);
   position: relative;
 }
 

@@ -108,6 +108,7 @@
 
 /* End breakpoints */
 /* End blog specific */
+/* TODO: Make text same width for both blocks. */
 /* Begin project specific*/
 
 .project {
@@ -157,15 +158,13 @@
 
 @media only screen and (min-width: 1200px) {
   .projImgContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-left: 4em;
     width: 15%;
     height: 15%;
   }
 
   .projDescContainer {
-    width: 80%;
+    width: 76%;
     padding: 0 50px;
     font-size: 18px;
   }
