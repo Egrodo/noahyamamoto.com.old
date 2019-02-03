@@ -8,6 +8,9 @@ import ContentBlock from '../components/ContentBlock';
 import ContactSection from '../sections/ContactSection';
 import Canvas from '../components/Canvas';
 
+import 'normalize.css';
+import '../css/index.css';
+
 // Blog index.
 class blog extends React.Component {
   stickyRef = React.createRef();
