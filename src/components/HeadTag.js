@@ -20,9 +20,9 @@ const HeadTag = ({ title }) => (
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-    <meta property="og:image" content="https://example.com/img/facebooklogo.png" />
-    <meta property="og:site_name" content="SEO blog" />
-    <meta property="og:description" content="This article will talk about tags" />
+    <meta property="og:image" content="/android-chrome-512x512.png" />
+    <meta property="og:site_name" content="Noah Yamamoto" />
+    <meta property="og:description" content="Personal website for Noah Yamamoto, frontend developer and student." />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
