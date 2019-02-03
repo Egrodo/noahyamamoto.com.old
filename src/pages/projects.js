@@ -100,7 +100,11 @@ class projects extends React.Component {
           </p>
           {/* TODO: Loading block for this */}
           <div className={CSS.GHChart}>
-            <img src="https://ghchart.rshah.org/7a0ba5/egrodo" alt="My Github contributions this year" title="My Github contributions this year" />
+            <img
+              src="https://ghchart.rshah.org/7a0ba5/egrodo"
+              alt="My Github contributions this year"
+              title="My Github contributions this year"
+            />
           </div>
           <div className={CSS.postsArea}>
             {edges.map(({ node }) => <ContentBlock type="project" node={node} key={node.title} />)}
@@ -111,5 +115,9 @@ class projects extends React.Component {
     );
   }
 }
+
+projects.propTypes = {
+  data: PropTypes.objectOf(PropTypes.object).isRequired,
+};
 
 export default projects;
