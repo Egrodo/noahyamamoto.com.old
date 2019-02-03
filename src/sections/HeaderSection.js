@@ -60,16 +60,11 @@ class HeaderSection extends React.Component {
   headerRef = React.createRef();
 
   componentDidMount = () => {
-    if (matchMedia('(pointer:fine)').matches) {
-      // Only bother with this handler if we're not on mobile.
-      window.addEventListener('scroll', this.handleScroll, false);
-    }
+    window.addEventListener('scroll', this.handleScroll, false);
   };
 
   componentWillUnmount = () => {
-    if (matchMedia('(pointer:fine)').matches) {
-      window.removeEventListener('scroll', this.handleScroll, false);
-    }
+    window.removeEventListener('scroll', this.handleScroll, false);
   };
 
   handleScroll = () => {

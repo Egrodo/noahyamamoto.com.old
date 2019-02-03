@@ -194,7 +194,7 @@
   }
 }
 
-@media only screen and (max-height: 650px) {
+@media only screen and (max-height: 605px) {
   .scrollContainer {
     position: relative;
   }
