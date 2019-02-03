@@ -44,10 +44,14 @@
 
 .GHChart {
   margin: 1em auto;
-  width: 800px;
+  width: 100%;
   text-align: center;
-  padding: 1em;
+  padding: 1em 0;
   background-color: #1f1f1f;
+}
+
+.GHChart > img {
+  width: 95vw;
 }
 
 .postsArea {
@@ -59,3 +63,17 @@
   border-top: 1px solid #424242;
   border-bottom: 1px solid #424242;
 }
+
+/* Begin responsiveness */
+
+@media only screen and (min-width: 750px) {
+  .GHChart {
+    width: 750px;
+  }
+
+  .GHChart > img {
+    width: 700px;
+  }
+}
+
+/* End responsiveness */

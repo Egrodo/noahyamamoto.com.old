@@ -24,7 +24,7 @@ const query = graphql`
     instaImg: file(relativePath: {eq: "instagram.png"}) {
       relativePath
       childImageSharp {
-        fixed(width: 64, height: 64) {
+        fixed(width: 128, height: 128) {
           src
           srcSet
         }
@@ -33,7 +33,7 @@ const query = graphql`
     linkedinImg: file(relativePath: {eq: "linkedin.png"}) {
       relativePath
       childImageSharp {
-        fixed(width: 64, height: 64) {
+        fixed(width: 128, height: 128) {
           src
           srcSet
         }
@@ -42,7 +42,7 @@ const query = graphql`
     githubImg: file(relativePath: {eq: "github.png"}) {
       relativePath
       childImageSharp {
-        fixed(width: 64, height: 64) {
+        fixed(width: 128, height: 128) {
           src
           srcSet
         }
