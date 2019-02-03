@@ -150,7 +150,7 @@ class HeaderSection extends React.Component {
                 />
               </a>
             </div>
-            <a href="#Projects" className={CSS.scrollContainer}>
+            <a href="#Projects" className={`${CSS.scrollContainer} ${hide && CSS.hide}`}>
               <div className={CSS.chevronContainer}>
                 <div className={CSS.scrollChevron} />
                 <div className={CSS.scrollChevron} />

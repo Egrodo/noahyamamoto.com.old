@@ -90,11 +90,14 @@
 /* Begin scroll chevron styles */
 .scrollContainer {
   position: absolute;
-  bottom: 0;
+  bottom: 5em;
   left: 0;
   right: 0;
-  margin-bottom: 5em;
   cursor: pointer;
+}
+
+.scrollContainer.hide {
+  display: none;
 }
 
 .chevronContainer {
