@@ -121,6 +121,7 @@ class Canvas extends React.Component {
 
           ctx.moveTo(lastPoint.x, lastPoint.y);
           ctx.lineTo(point.x, point.y);
+          // ctx.quadraticCurveTo(points[i - 1].x, point[i - 1].y, point.x, point.y);
 
           ctx.stroke();
           ctx.closePath();

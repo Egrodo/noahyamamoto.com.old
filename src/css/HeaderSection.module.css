@@ -5,6 +5,10 @@
   top: 0;
 }
 
+.Header.hide {
+  visibility: hidden;
+}
+
 .profileImgContainer {
   display: block;
   width: 100%;
