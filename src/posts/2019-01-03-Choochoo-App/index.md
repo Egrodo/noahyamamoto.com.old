@@ -10,7 +10,7 @@ In my final project for the CIS2200 class I was TA'ing for I knew I wanted to ma
 
 ![choochoo image](https://i.imgur.com/kpTRta1.png)
 
-Any New Yorker could attest to the frustration of arriving at the station just for the train to be leaving, forcing you to be wait tens of minutes for the next train, potentially making you late. Being someone who is obsessed with optimizing processes I came up with Choochoo, an app to display arrival times with a simple and pleasant interface while also providing the extra value of showing the weather conditions.
+Any New Yorker could attest to the frustration of arriving at the station just for the train to be leaving, forcing you to wait tens of minutes for the next train, potentially making you late. Being someone who is obsessed with optimizing processes I came up with Choochoo, an app to display arrival times with a simple and pleasant interface while also providing the extra value of showing the weather conditions.
 
 My biggest project yet, I wanted to get as much as I could out of the opportunity. I used it as an excuse to learn a litany of new tools and techniques, including React Hooks, Adobe XD, CSS Modules, and a bunch of asynchronous stuff. I also wrote a [Node and Express backend](https://github.com/Egrodo/choochooServer) to parse and serve the data from the MTA (boy they don't make it easy), and I set up continuous integration with Heroku.
 
