@@ -72,7 +72,7 @@ class HeaderSection extends React.Component {
   handleScroll = () => {
     // First check if the user has passed the arrow
     const newState = {};
-    if (window.scrollY > this.footerRef.current.scrollHeight + 10) {
+    if (window.scrollY > this.footerRef.current.scrollHeight + 100) {
       newState.hideFooter = true;
     } else newState.hideFooter = false;
     if (window.scrollY > this.headerRef.current.scrollHeight) {
