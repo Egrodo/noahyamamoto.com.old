@@ -54,10 +54,13 @@ const query = graphql`
 // TODO: Slide in content somehow.
 class HeaderSection extends React.Component {
   state = {
-    hide: false,
+    hideAll: false,
+    hideFooter: false,
   };
 
   headerRef = React.createRef();
+
+  footerRef = React.createRef();
 
   componentDidMount = () => {
     window.addEventListener('scroll', this.handleScroll, false);
@@ -68,25 +71,32 @@ class HeaderSection extends React.Component {
   };
 
   handleScroll = () => {
+    // First check if the user has passed the arrow
+    const newState = {};
+    console.log(window.scrollY > this.footerRef.current.scrollHeight);
+    if (window.scrollY > this.footerRef.current.scrollHeight) {
+      newState.hideFooter = true;
+    } else newState.hideFooter = false;
     if (window.scrollY > this.headerRef.current.scrollHeight) {
-      this.setState({ hide: true });
-    } else this.setState({ hide: false });
+      newState.hideAll = true;
+    } else newState.hideAll = false;
+    this.setState(newState);
   };
 
   render = () => (
     <StaticQuery
       query={query}
       render={(data) => {
-      // @babel/plugin-optional-chaining cause jeez graphql is nested.
+        // @babel/plugin-optional-chaining cause jeez graphql is nested.
         const resumeLink = data?.resumeLink?.edges[0]?.node?.publicURL;
         const profilePic = data?.profilePic?.childImageSharp?.fixed;
         const githubImg = data?.githubImg?.childImageSharp?.fixed;
         const instaImg = data?.instaImg?.childImageSharp?.fixed;
         const linkedinImg = data?.linkedinImg?.childImageSharp?.fixed;
-        const { hide } = this.state;
+        const { hideAll, hideFooter } = this.state;
 
         return (
-          <header className={`${CSS.Header} ${hide && CSS.hide}`} ref={this.headerRef}>
+          <header className={`${CSS.Header} ${hideAll && CSS.hide}`} ref={this.headerRef}>
             <div className={CSS.profileImgContainer}>
               <img src={profilePic.src} className={CSS.profileImg} alt="Noah Yamamoto" />
             </div>
@@ -150,7 +160,7 @@ class HeaderSection extends React.Component {
                 />
               </a>
             </div>
-            <a href="#Projects" className={`${CSS.scrollContainer} ${hide && CSS.hide}`}>
+            <a href="#Projects" className={`${CSS.scrollContainer} ${hideFooter && CSS.hide}`} ref={this.footerRef}>
               <div className={CSS.chevronContainer}>
                 <div className={CSS.scrollChevron} />
                 <div className={CSS.scrollChevron} />

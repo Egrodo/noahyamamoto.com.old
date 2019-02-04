@@ -97,7 +97,7 @@
 }
 
 .scrollContainer.hide {
-  display: none;
+  visibility: hidden;
 }
 
 .chevronContainer {
@@ -166,7 +166,13 @@
 
 /* Begin breakpoints */
 
-/* TODO: Space things more, bigger picture */
+@media only screen and (max-height: 605px) {
+  .scrollContainer {
+    position: relative;
+    bottom: initial;
+  }
+}
+
 @media only screen and (min-width: 700px) {
   .blurbContainer {
     width: 500px;
@@ -197,9 +203,4 @@
   }
 }
 
-@media only screen and (max-height: 605px) {
-  .scrollContainer {
-    position: relative;
-  }
-}
 /* End breakpoints */
