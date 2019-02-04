@@ -120,10 +120,7 @@ class Canvas extends React.Component {
           ctx.beginPath();
 
           ctx.moveTo(lastPoint.x, lastPoint.y);
-          // ctx.lineTo(point.x, point.y);
-          // TODO: If I can calculate
-          const ctrlPoint = points[i - 1] || point;
-          ctx.quadraticCurveTo(ctrlPoint.x, ctrlPoint.y, point.x, point.y);
+          ctx.lineTo(point.x, point.y);
 
           ctx.stroke();
           ctx.closePath();

@@ -3,6 +3,7 @@ import React from 'react';
 import FancyLink from '../components/FancyLink';
 import CSS from '../css/FourZeroFour.module.css';
 
+import '../css/index.css';
 import 'normalize.css';
 
 const FourZeroFour = () => (
