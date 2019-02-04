@@ -51,7 +51,6 @@ const query = graphql`
   }
 `;
 
-// TODO: Slide in content somehow.
 class HeaderSection extends React.Component {
   state = {
     hideAll: false,
@@ -73,8 +72,7 @@ class HeaderSection extends React.Component {
   handleScroll = () => {
     // First check if the user has passed the arrow
     const newState = {};
-    console.log(window.scrollY > this.footerRef.current.scrollHeight);
-    if (window.scrollY > this.footerRef.current.scrollHeight) {
+    if (window.scrollY > this.footerRef.current.scrollHeight + 50) {
       newState.hideFooter = true;
     } else newState.hideFooter = false;
     if (window.scrollY > this.headerRef.current.scrollHeight) {
