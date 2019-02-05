@@ -122,6 +122,8 @@ class Canvas extends React.Component {
           ctx.moveTo(lastPoint.x, lastPoint.y);
           ctx.lineTo(point.x, point.y);
 
+          // https://stackoverflow.com/a/40653054/2070793
+
           ctx.stroke();
           ctx.closePath();
         }

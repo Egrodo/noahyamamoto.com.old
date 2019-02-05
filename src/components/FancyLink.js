@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { Link as InternalLink } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 import CSS from '../css/FancyLink.module.css';
 
@@ -16,7 +16,7 @@ const FancyLink = ({
       </span>
     </InternalLink>
   ) : (
-    <a
+    <OutboundLink
       href={to}
       className={CSS.fancyLink}
       target={newTab ? '_blank' : '_self'}
@@ -25,7 +25,7 @@ const FancyLink = ({
       <span className={`${CSS.fancyLinkText} ${animated && CSS.animated}`} style={style}>
         {children}
       </span>
-    </a>
+    </OutboundLink>
   );
 };
 

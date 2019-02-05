@@ -50,7 +50,7 @@ const ContentBlock = ({ type, node }) => {
           <p className={CSS.projDesc}>{node.description}</p>
           <div className={CSS.projLink}>
             <FancyLink to={node.link} newTab>
-              Check it out
+              Check It Out
             </FancyLink>
           </div>
         </div>

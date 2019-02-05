@@ -31,5 +31,12 @@ module.exports = {
     },
     "gatsby-transformer-remark",
     "gatsby-plugin-catch-links",
+     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-130379672-2",
+        respectDNT: true,
+      },
+    },
   ],
 };

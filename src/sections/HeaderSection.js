@@ -108,7 +108,7 @@ class HeaderSection extends React.Component {
               <p>
               I&apos;m a CIS student at Baruch College. I love making things on the
               web and have worked for cool companies like Marvel, Refugees
-              United, and Squarespace (2019)
+              United, and Squarespace (2019).
               </p>
               <FancyLink
                 to={resumeLink}
