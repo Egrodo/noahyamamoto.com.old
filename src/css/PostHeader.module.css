@@ -100,6 +100,10 @@
   width: 100%;
 }
 
+.postTitle {
+  cursor: pointer;
+}
+
 .postDate {
   font-size: 1em;
   height: 1em;

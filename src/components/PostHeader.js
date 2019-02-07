@@ -59,6 +59,11 @@ class PostHeader extends React.Component {
     }
   };
 
+  scrollToTop = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
+
   render = () => {
     const { post } = this.props;
     const { prevPost, nextPost } = this.state;
@@ -98,12 +103,23 @@ class PostHeader extends React.Component {
           <p className={CSS.postDate}>{post.frontmatter.date}</p>
         </div>
         <div className={CSS.bottomHeader} ref={this.stickyRef}>
-          <h2 className={CSS.postTitle}>{post.frontmatter.title}</h2>
+          <h2 className={CSS.postTitle}>
+            {/* eslint-disable-next-line */}
+            <span
+              onClick={this.scrollToTop}
+              alt="Scroll back to top"
+              role="button"
+              tabIndex={0}
+              title="Scroll back to top"
+            >
+              {post.frontmatter.title}
+            </span>
+          </h2>
           <p className={CSS.postDate}>{post.frontmatter.date}</p>
         </div>
       </header>
     );
-  }
+  };
 }
 
 PostHeader.propTypes = {
