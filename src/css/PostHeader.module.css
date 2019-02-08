@@ -100,7 +100,7 @@
   width: 100%;
 }
 
-.postTitle {
+.postTitle > span {
   cursor: pointer;
 }
 
