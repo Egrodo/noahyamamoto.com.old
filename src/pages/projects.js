@@ -39,9 +39,9 @@ class projects extends React.Component {
 
   fakeStickyRef = React.createRef();
 
-  state = {
-    imgLoaded: false,
-  };
+  imgRef = React.createRef();
+
+  placeholderRef = React.createRef();
 
   componentDidMount = () => {
     window.addEventListener('scroll', this.handleScroll, false);
@@ -71,7 +71,6 @@ class projects extends React.Component {
 
   render() {
     const { data: { allProjectsJson: { edges } } } = this.props;
-    const { imgLoaded } = this.state;
     return (
       <section className={CSS.blog}>
         <HeadTag title="Projects" />
@@ -103,17 +102,21 @@ class projects extends React.Component {
             </FancyLink>
             !
           </p>
-          {/* TODO: Loading block for this */}
           <div className={CSS.GHChart}>
-            <div className={`${CSS.imgPlaceholder} ${imgLoaded ? CSS.hide : ''}`}>
+            <div className={CSS.imgPlaceholder} ref={this.placeholderRef}>
               <Spinner />
             </div>
             <img
               src="https://ghchart.rshah.org/7a0ba5/egrodo"
               alt="My Github contributions this year"
               title="My Github contributions this year"
-              className={imgLoaded ? '' : CSS.hide}
-              onLoad={() => this.setState({ imgLoaded: true })}
+              ref={this.imgRef}
+              style={{ display: 'none' }}
+              onLoad={() => {
+                // Using refs for this because the state solution doesn't work on slow connections.
+                this.placeholderRef.current.style.display = 'none';
+                this.imgRef.current.style.display = 'inline-block';
+              }}
             />
           </div>
           <div className={CSS.postsArea}>
