@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import HeadTag from '../components/HeadTag';
+import Spinner from '../components/Spinner';
 import CSS from '../css/projects.module.css';
 import FancyLink from '../components/FancyLink';
 import ContentBlock from '../components/ContentBlock';
@@ -38,6 +39,10 @@ class projects extends React.Component {
 
   fakeStickyRef = React.createRef();
 
+  state = {
+    imgLoaded: false,
+  };
+
   componentDidMount = () => {
     window.addEventListener('scroll', this.handleScroll, false);
   }
@@ -66,7 +71,7 @@ class projects extends React.Component {
 
   render() {
     const { data: { allProjectsJson: { edges } } } = this.props;
-    console.log(edges);
+    const { imgLoaded } = this.state;
     return (
       <section className={CSS.blog}>
         <HeadTag title="Projects" />
@@ -100,10 +105,15 @@ class projects extends React.Component {
           </p>
           {/* TODO: Loading block for this */}
           <div className={CSS.GHChart}>
+            <div className={`${CSS.imgPlaceholder} ${imgLoaded ? CSS.hide : ''}`}>
+              <Spinner />
+            </div>
             <img
               src="https://ghchart.rshah.org/7a0ba5/egrodo"
               alt="My Github contributions this year"
               title="My Github contributions this year"
+              className={imgLoaded ? '' : CSS.hide}
+              onLoad={() => this.setState({ imgLoaded: true })}
             />
           </div>
           <div className={CSS.postsArea}>

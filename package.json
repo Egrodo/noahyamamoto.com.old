@@ -16,6 +16,7 @@
     "gatsby-image": "^2.0.26",
     "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-google-analytics": "^2.0.13",
+    "gatsby-plugin-nprogress": "^2.0.8",
     "gatsby-plugin-react-helmet": "^3.0.6",
     "gatsby-plugin-sharp": "^2.0.17",
     "gatsby-source-filesystem": "^2.0.16",
