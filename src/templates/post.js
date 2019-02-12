@@ -13,7 +13,7 @@ import CSS from '../css/postTemplate.module.css';
 
 const Template = ({ data }) => (
   <section>
-    <HeadTag title={data.markdownRemark.frontmatter.title} />
+    <HeadTag title={data.markdownRemark.frontmatter.title} description={data.markdownRemark.frontmatter.excerpt} />
     <div className={CSS.canvas}>
       <Canvas />
     </div>
@@ -44,6 +44,7 @@ export const postQuery = graphql`
         path
         title
         date
+        excerpt
       }
     }
     allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___date] }, limit: 100) {
