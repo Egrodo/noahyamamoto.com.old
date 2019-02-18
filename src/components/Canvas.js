@@ -3,35 +3,10 @@ import React from 'react';
 /* Mouse trail adapted from a jQuery Codepen by Bryan C https://codepen.io/bryjch/pen/QEoXwA */
 
 class Point {
-  // Class for point math.
   constructor(x, y) {
     this.x = x;
     this.y = y;
     this.lifetime = 0;
-  }
-
-  // Get the distance between a & b
-  static distance(a, b) {
-    const dx = a.x - b.x;
-    const dy = a.y - b.y;
-
-    return Math.sqrt(dx * dx + dy * dy);
-  }
-
-  // Get the mid point between a & b
-  static midPoint(a, b) {
-    const mx = a.x + (b.x - a.x) * 0.5;
-    const my = a.y + (b.y - a.y) * 0.5;
-
-    return new Point(mx, my);
-  }
-
-  // Get the angle between a & b
-  static angle(a, b) {
-    const dx = a.x - b.x;
-    const dy = a.y - b.y;
-
-    return Math.atan2(dy, dx);
   }
 }
 
@@ -42,7 +17,6 @@ class Canvas extends React.Component {
   };
 
   canvas = React.createRef();
-
 
   componentDidMount = () => {
     // Set height and width on load because if set in state body isn't defined yet.
@@ -87,11 +61,10 @@ class Canvas extends React.Component {
       ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
       const duration = 0.7 * (1 * 1000) / 60; // Last 80% of a frame per point
 
-      let point;
-      let lastPoint;
-
       for (let i = 0; i < points.length; ++i) {
-        point = points[i];
+        const point = points[i];
+        let lastPoint;
+
         if (points[i - 1] !== undefined) {
           lastPoint = points[i - 1];
         } else lastPoint = point;
@@ -102,19 +75,19 @@ class Canvas extends React.Component {
           // If the point dies, remove it.
           points.shift();
         } else {
-          // Otherwise animate it.
+          // Otherwise animate it:
 
-          // As the lifetime goes on, inc goes from 0 to 1.
-          const inc = (point.lifetime / duration);
-          const spreadRate = 7 * (1 - inc);
+          // As the lifetime goes on, lifePercent goes from 0 to 1.
+          const lifePercent = (point.lifetime / duration);
+          const spreadRate = 7 * (1 - lifePercent);
 
           ctx.lineJoin = 'round';
           ctx.lineWidth = spreadRate;
 
           // As time increases decrease r and b, increase g to go from purple to green.
-          const red = Math.floor(190 - (190 * inc));
+          const red = Math.floor(190 - (190 * lifePercent));
           const green = 0;
-          const blue = Math.floor(210 + (210 * inc));
+          const blue = Math.floor(210 + (210 * lifePercent));
           ctx.strokeStyle = `rgb(${red},${green},${blue}`;
 
           ctx.beginPath();
@@ -122,7 +95,7 @@ class Canvas extends React.Component {
           ctx.moveTo(lastPoint.x, lastPoint.y);
           ctx.lineTo(point.x, point.y);
 
-          // https://stackoverflow.com/a/40653054/2070793
+          // Unfortunately there's no way to make smoother angles https://stackoverflow.com/a/40653054/2070793
 
           ctx.stroke();
           ctx.closePath();

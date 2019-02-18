@@ -4,6 +4,16 @@ module.exports = {
     title: "Noah Yamamoto",
   },
   plugins: [
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-prismjs',
+          }
+        ]
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -29,7 +39,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    "gatsby-transformer-remark",
     "gatsby-plugin-catch-links",
      {
       resolve: `gatsby-plugin-google-analytics`,
@@ -38,14 +47,5 @@ module.exports = {
         respectDNT: true,
       },
     },
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `#b200f0`,
-        // Disable the loading spinner.
-        showSpinner: false,
-    },
-  },
   ],
 };

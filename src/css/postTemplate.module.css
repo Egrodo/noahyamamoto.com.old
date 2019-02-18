@@ -18,10 +18,6 @@
   margin: 1em 0;
 }
 
-.postContent p:first-of-type {
-  text-indent: 2em;
-}
-
 .postContent p img {
   display: block;
   width: 75%;

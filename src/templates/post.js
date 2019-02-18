@@ -8,6 +8,7 @@ import ContactSection from '../sections/ContactSection';
 import PostHeader from '../components/PostHeader';
 
 import 'normalize.css';
+import '../css/dracula-prism.css';
 import '../css/index.css';
 import CSS from '../css/postTemplate.module.css';
 

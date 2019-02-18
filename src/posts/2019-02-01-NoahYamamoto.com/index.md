@@ -1,17 +1,182 @@
 ---
 layout: post
-path: '/blog/NoahYamamoto'
-title: This Site
+path: '/blog/mouseTrailAnimation'
+title: Mouse Trail
 date: '2019-02-01'
-excerpt: Welcome to my personal website! I hand-coded every corner of it using Gatsbyjs and React but with no extraneous dependencies! Built to be super fast and pleasant to use, there's a ton of fun features.
+excerpt: For my personal site I made a gradient mouse trail animation that utilizes requestAnimationFrame to run at 60fps throughout the site, here's a little info on how I did that.
 ---
 
-I've always known the importance of having a personal website, if not just for domain security, but the last time I updated mine was way back in 2016 - before I even got into front end development! I followed a tutorial and used a theme for a Jekyll site on Digital Ocean, and while it worked just fine, I wanted to create something of my own that I could be proud of (and didn't cost me anything to host!) So, using the hottest new tech, I took my winter break and did just that.
+I wanted to make something that would add some flair to my website, and after seeing another developer implement something similar on [their website](https://electerious.com) I figured I'd give it a shot. My first attempt was much simpler, just drawing a line from the last point to the new point then fading out the whole canvas. Check out [version 1 here](https://repl.it/@NoahYamamoto/Mouse-trail-animation-v1).
 
-The site you're currently on uses the fantastic [Gatsbyjs framework](https://www.gatsbyjs.org/), which allows me to have a statically generated single-page-application with React and Webpack. Was also my first time using GraphQL, and while there was a bit of a learning curve, I'm a big fan of the way it enables you to write components to be flexible to data flow and [highly reusable](https://medium.com/programming-philosophy/reactive-manifesto-by-jonas-bon%C3%A9r-ab8c36493fa3).
+However this method had some issues and was very inflexible, so I eventually went about making a better version that keeps track of all active points and animates them individually. Perhaps a bit more complicated, but doing it by hand allows for much more customization without any noticeable drop in performance.
 
-I used AdobeXD to plan/prototype the design beforehand as I find having a completed design in front of you increases productivity massively. I wanted to give my site plenty of flavor, so I added a bunch of little colorful animations throughout. The most obvious one to a desktop user is the mouse trail animation that greets you in the background of pages. I went through many iterations with this component before finally settling on the gradient-changing 60fps HTML5 Canvas version you see now. If you'd like to see how that's coded (or implement one for your own site), check out the source [here!](https://github.com/Egrodo/noahyamamoto.com/blob/master/src/components/Canvas.js)
+The new version works by keeping track of all visible points in an array and updating them all on every (requestAnimation)Frame:
 
-There are also aplenty of other little animations and UI treats to maintain a premium feel, including a [FancyLink](https://github.com/Egrodo/noahyamamoto.com/blob/master/src/components/FancyLink.js) component and an [inline navigation header](https://github.com/Egrodo/noahyamamoto.com/blob/master/src/components/PostHeader.js) for the blog posts that lets the user navigate through the blog posts and dynamically display content, as well as a bunch of other small things that I think add to the user experience.
+```javascript
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.lifetime = 0;
+  }
+}
 
-Thanks for checking out my site, if you have any recommendations or questions don't hesitate to contact me at the email below!
+const points = [];
+
+const addPoint = (x, y) => {
+  const point = new Point(x, y);
+  points.push(point);
+};
+
+document.addEventListener('mousemove', ({ clientX, clientY }) => {
+  addPoint(clientX - canvas.offsetLeft, clientY - canvas.offsetTop);
+}, false);
+...
+```
+
+Each point gets a different color and width depending on how long its been alive until it reaches a set maximum lifetime and dies (is removed from the queue). This allows the trail to "fade" out into a different color before disappearing. In my example I have the point going from purple to blue as it fits the theme of my site:
+
+```javascript
+// As the lifetime goes on, lifePercent goes from 0 to 1.
+const lifePercent = (point.lifetime / duration);
+const spreadRate = 7 * (1 - lifePercent);
+
+ctx.lineJoin = 'round';
+ctx.lineWidth = spreadRate;
+
+// As time increases decrease r and b, increase g to go from purple to green.
+const red = Math.floor(190 - (190 * lifePercent));
+const green = 0;
+const blue = Math.floor(210 + (210 * lifePercent));
+ctx.strokeStyle = `rgb(${red},${green},${blue}`;
+```
+
+Another concern of mine was mobile; for whatever reason it seems that some mobile devices emit the mousemove event on touch/drag, and this was causing weird jumpy cursor trails to appear for mobile users. Since smartphones don't (usually) have cursors anyways, I decided to just disable the animation if the user had no pointer device attached by checking a matchMedia conditional before starting it:
+
+```javascript
+if (matchMedia('(pointer:fine)').matches) {
+  this.startAnimation();
+}
+```
+(This surprisingly has [94.28% support](https://caniuse.com/#feat=matchmedia), how had I not heard of it before‽)
+
+Anyways, throw all this together and you'll get what you see here! Full code below:
+
+```javascript
+import React from 'react';
+
+/* Mouse trail adapted from a jQuery Codepen by Bryan C https://codepen.io/bryjch/pen/QEoXwA */
+
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.lifetime = 0;
+  }
+}
+
+class Canvas extends React.Component {
+  state = {
+    cHeight: 0,
+    cWidth: 0,
+  };
+
+  canvas = React.createRef();
+
+  componentDidMount = () => {
+    // Set height and width on load because if set in state body isn't defined yet.
+    this.setState({
+      cHeight: document.body.clientHeight,
+      cWidth: document.body.clientWidth,
+    });
+
+    window.addEventListener(
+      'resize',
+      () => {
+        this.setState({
+          cHeight: document.body.clientHeight,
+          cWidth: document.body.clientWidth,
+        });
+      },
+      false,
+    );
+
+    // If the device supports cursors, start animation.
+    if (matchMedia('(pointer:fine)').matches) {
+      this.startAnimation();
+    }
+  }
+
+  startAnimation = () => {
+    const canvas = this.canvas.current;
+    const ctx = canvas.getContext('2d');
+
+    const points = [];
+
+    const addPoint = (x, y) => {
+      const point = new Point(x, y);
+      points.push(point);
+    };
+
+    document.addEventListener('mousemove', ({ clientX, clientY }) => {
+      addPoint(clientX - canvas.offsetLeft, clientY - canvas.offsetTop);
+    }, false);
+
+    const animatePoints = () => {
+      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+      const duration = 0.7 * (1 * 1000) / 60; // Last 80% of a frame per point
+
+      for (let i = 0; i < points.length; ++i) {
+        const point = points[i];
+        let lastPoint;
+
+        if (points[i - 1] !== undefined) {
+          lastPoint = points[i - 1];
+        } else lastPoint = point;
+
+        point.lifetime += 1;
+
+        if (point.lifetime > duration) {
+          // If the point dies, remove it.
+          points.shift();
+        } else {
+          // Otherwise animate it:
+
+          // As the lifetime goes on, lifePercent goes from 0 to 1.
+          const lifePercent = (point.lifetime / duration);
+          const spreadRate = 7 * (1 - lifePercent);
+
+          ctx.lineJoin = 'round';
+          ctx.lineWidth = spreadRate;
+
+          // As time increases decrease r and b, increase g to go from purple to green.
+          const red = Math.floor(190 - (190 * lifePercent));
+          const green = 0;
+          const blue = Math.floor(210 + (210 * lifePercent));
+          ctx.strokeStyle = `rgb(${red},${green},${blue}`;
+
+          ctx.beginPath();
+
+          ctx.moveTo(lastPoint.x, lastPoint.y);
+          ctx.lineTo(point.x, point.y);
+
+          ctx.stroke();
+          ctx.closePath();
+        }
+      }
+      requestAnimationFrame(animatePoints);
+    };
+
+    animatePoints();
+  }
+
+  render = () => {
+    const { cHeight, cWidth } = this.state;
+    return <canvas ref={this.canvas} width={cWidth} height={cHeight} />;
+  }
+}
+
+export default Canvas;
+```
+
+Thanks for reading, hope you find this useful!
