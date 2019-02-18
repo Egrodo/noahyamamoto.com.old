@@ -1,6 +1,7 @@
 /* eslint-disable no-script-url */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link as InternalLink } from 'gatsby';
 import FancyLink from './FancyLink';
 
 import CSS from '../css/PostHeader.module.css';
@@ -70,29 +71,29 @@ class PostHeader extends React.Component {
     return (
       <header className={CSS.postHeader}>
         <div className={CSS.topHeader}>
-          <a
-            href={(prevPost && prevPost.frontmatter.path) || 'javascript:;'}
+          <InternalLink
+            to={(prevPost && prevPost.frontmatter.path) || 'javascript:;'}
             className={`${CSS.leftArrowLink} ${!prevPost && CSS.disabled}`}
             title="Last Post"
           >
             <div className={CSS.arrow}>
               <div className={CSS.leftArrow} />
             </div>
-          </a>
+          </InternalLink>
           <div className={CSS.nameContainer}>
             <FancyLink to="/" internal animated>
               Noah Yamamoto
             </FancyLink>
           </div>
-          <a
-            href={(nextPost && nextPost.frontmatter.path) || 'javascript:;'}
+          <InternalLink
+            to={(nextPost && nextPost.frontmatter.path) || 'javascript:;'}
             className={`${CSS.rightArrowLink} ${!nextPost && CSS.disabled}`}
             title="Next Post"
           >
             <div className={CSS.arrow}>
               <div className={CSS.rightArrow} />
             </div>
-          </a>
+          </InternalLink>
         </div>
         <div
           className={CSS.bottomHeader}
