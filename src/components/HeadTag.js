@@ -19,9 +19,16 @@ const HeadTag = ({ title, description }) => (
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-    <meta property="og:image" content="/android-chrome-512x512.png" />
+    <meta property="og:title" content={title} />
+    <meta property="og:url" content={document.URL} />
     <meta property="og:site_name" content="Noah Yamamoto" />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content="/android-chrome-512x512.png" />
+
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/android-chrome-512x512.png" />
+    <meta name="twitter:card" content="summary" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
