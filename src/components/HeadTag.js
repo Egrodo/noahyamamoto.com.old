@@ -23,7 +23,7 @@ const HeadTag = ({ title, description, path }) => (
     <meta property="og:url" content={`https://noahyamamoto.com${path}`} />
     <meta property="og:site_name" content="Noah Yamamoto" />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/android-chrome-512x512.png" />
+    <meta property="og:image" content="https://noahyamamoto.com/android-chrome-512x512.png" />
 
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
