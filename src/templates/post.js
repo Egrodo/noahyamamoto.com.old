@@ -14,7 +14,7 @@ import CSS from '../css/postTemplate.module.css';
 
 const Template = ({ data }) => (
   <section>
-    <HeadTag title={data.markdownRemark.frontmatter.title} description={data.markdownRemark.frontmatter.excerpt} />
+    <HeadTag title={data.markdownRemark.frontmatter.title} description={data.markdownRemark.frontmatter.excerpt} path={data.markdownRemark.frontmatter.path} />
     <div className={CSS.canvas}>
       <Canvas />
     </div>

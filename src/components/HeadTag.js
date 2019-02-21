@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
-const HeadTag = ({ title, description }) => (
+const HeadTag = ({ title, description, path }) => (
   <Helmet defaultTitle="Noah Yamamoto" titleTemplate={`${title} - Noah Yamamoto`}>
     <title>{title}</title>
     <html lang="en" />
@@ -20,7 +20,7 @@ const HeadTag = ({ title, description }) => (
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
     <meta property="og:title" content={title} />
-    <meta property="og:url" content={document.URL} />
+    <meta property="og:url" content={`https://noahyamamoto.com${path}`} />
     <meta property="og:site_name" content="Noah Yamamoto" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/android-chrome-512x512.png" />
@@ -29,6 +29,7 @@ const HeadTag = ({ title, description }) => (
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/android-chrome-512x512.png" />
     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@egrodo" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -43,11 +44,13 @@ const HeadTag = ({ title, description }) => (
 HeadTag.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
+  path: PropTypes.string,
 };
 
 HeadTag.defaultProps = {
   title: 'Personal Site',
   description: 'Personal website for Noah Yamamoto, frontend developer and student.',
+  path: '/',
 };
 
 export default HeadTag;
