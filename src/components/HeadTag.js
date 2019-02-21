@@ -13,7 +13,6 @@ const HeadTag = ({ title, description }) => (
     />
     <meta name="author" content="Noah Yamamoto" />
     <meta name="keywords" content="noah, yamamoto, site, website, personal, portfolio, blog" />
-    <link rel="canonical" href="/" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#000000" />
     <meta name="msapplication-navbutton-color" content="#000000" />

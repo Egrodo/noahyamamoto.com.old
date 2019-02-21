@@ -60,7 +60,7 @@ if (matchMedia('(pointer:fine)').matches) {
 ```
 (This surprisingly has [94.28% support](https://caniuse.com/#feat=matchmedia), how had I not heard of it before‽)
 
-Anyways, throw all this together and you'll get what you see here! Full code below:
+Anyways, throw all this into a component and you'll get a fancy mouse trail animation! Full code below:
 
 ```javascript
 import React from 'react';
