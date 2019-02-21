@@ -1,6 +1,6 @@
 ---
 layout: post
-path: '/blog/mouseTrailAnimation'
+path: '/blog/mousetrailanimation'
 title: Mouse Trail
 date: '2019-02-01'
 excerpt: For my personal site I made a gradient mouse trail animation that utilizes requestAnimationFrame to run at 60fps throughout the site, here's a little info on how I did that.

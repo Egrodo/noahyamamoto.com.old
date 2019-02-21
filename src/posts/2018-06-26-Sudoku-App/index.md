@@ -1,6 +1,6 @@
 ---
 layout: post
-path: '/blog/Sudoku-App'
+path: '/blog/sudoku-app'
 title: Sudoku App
 date: '2018-06-26'
 excerpt: This project started as a Leetcode algorithm challenge to solve Sudoku puzzles, but then I thought heck, I'm a front end developer aren't I? Let's use this as an excuse to learn Progressive Web Apps and write the best possible React Sudoku app there ever was.

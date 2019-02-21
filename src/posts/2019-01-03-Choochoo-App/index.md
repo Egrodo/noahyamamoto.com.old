@@ -1,6 +1,6 @@
 ---
 layout: post
-path: '/blog/ChooChoo-App'
+path: '/blog/choochoo-app'
 title: Choochoo App
 date: '2019-01-03'
 excerpt: In my final project for the CIS2200 class I was TA'ing for I knew I wanted to make something that the students might find useful. I thought about the painpoints in my day, and being a New Yorker, the MTA instantly came to mind.
