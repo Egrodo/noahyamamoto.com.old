@@ -47,5 +47,19 @@ module.exports = {
         respectDNT: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: "Noah Yamamoto's Personal Website",
+        short_name: `Noah Yamamoto`,
+        start_url: `/`,
+        background_color: `#000`,
+        theme_color: `#b200f0`,
+        display: `minimal-ui`,
+        icon: `static/android-chrome-512x512.png`,
+        include_favicon: true,
+      }
+    },
+    `gatsby-plugin-offline`,
   ],
 };
