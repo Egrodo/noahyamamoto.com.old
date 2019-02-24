@@ -5,6 +5,19 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Noah Yamamoto`,
+        short_name: `Noah Yamamoto`,
+        start_url: `/`,
+        background_color: `#000`,
+        theme_color: `#b200f0`,
+        display: `minimal-ui`,
+        icon: `static/android-chrome-512x512.png`,
+        include_favicon: true,
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -46,19 +59,6 @@ module.exports = {
         trackingId: `UA-130379672-2`,
         respectDNT: true,
       },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Noah Yamamoto's Personal Website`,
-        short_name: `Noah Yamamoto`,
-        start_url: `/`,
-        background_color: `#000`,
-        theme_color: `#b200f0`,
-        display: `minimal-ui`,
-        icon: `static/android-chrome-512x512.png`,
-        include_favicon: true,
-      }
     },
     `gatsby-plugin-offline`,
   ],
