@@ -1,15 +1,15 @@
 /* eslint-disable */
 module.exports = {
   siteMetadata: {
-    title: "Noah Yamamoto",
+    title: `Noah Yamamoto`,
   },
   plugins: [
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-prismjs',
+            resolve: `gatsby-remark-prismjs`,
           }
         ]
       }
@@ -18,9 +18,9 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: "posts",
+        name: `posts`,
         path: `${__dirname}/src/posts`,
       },
     },
@@ -28,7 +28,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "data",
+        name: `data`,
         path: `${__dirname}/src/data/`,
       },
     },
@@ -39,18 +39,18 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    "gatsby-plugin-catch-links",
+    `gatsby-plugin-catch-links`,
      {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-130379672-2",
+        trackingId: `UA-130379672-2`,
         respectDNT: true,
       },
     },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Noah Yamamoto's Personal Website",
+        name: `Noah Yamamoto's Personal Website`,
         short_name: `Noah Yamamoto`,
         start_url: `/`,
         background_color: `#000`,
