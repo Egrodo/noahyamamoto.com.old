@@ -158,7 +158,7 @@ class HeaderSection extends React.Component {
                 />
               </a>
             </div>
-            <a href="#Projects" className={`${CSS.scrollContainer} ${hideFooter && CSS.hide}`} ref={this.footerRef}>
+            <a href="#Projects" className={`${CSS.scrollContainer} ${hideFooter ? CSS.hide : ''}`} ref={this.footerRef}>
               <div className={CSS.chevronContainer}>
                 <div className={CSS.scrollChevron} />
                 <div className={CSS.scrollChevron} />

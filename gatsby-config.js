@@ -8,7 +8,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Noah Yamamoto`,
-        short_name: `Noah Yamamoto`,
+        short_name: `NY`,
         start_url: `/`,
         background_color: `#000`,
         theme_color: `#b200f0`,
