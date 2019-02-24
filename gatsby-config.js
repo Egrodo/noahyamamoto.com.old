@@ -11,7 +11,7 @@ module.exports = {
         short_name: `NY`,
         start_url: `/`,
         background_color: `#000`,
-        theme_color: `#b200f0`,
+        theme_color: `#000`,
         display: `minimal-ui`,
         icon: `static/android-chrome-512x512.png`,
         include_favicon: true,

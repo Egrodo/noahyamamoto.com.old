@@ -74,7 +74,7 @@ class projects extends React.Component {
     const { imgLoaded } = this.state;
     return (
       <section className={CSS.blog}>
-        <HeadTag title="Projects" />
+        <HeadTag title="Projects" description="Projects index for NoahYamamoto.com" path="/projects" />
         <Canvas />
         <header className={CSS.projectsHeader}>
           <div className={CSS.topHeader}>

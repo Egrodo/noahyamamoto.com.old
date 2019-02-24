@@ -47,7 +47,7 @@ class blog extends React.Component {
     const { data: { allMarkdownRemark: { edges } } } = this.props;
     return (
       <section className={CSS.blog}>
-        <HeadTag title="Blog Posts" />
+        <HeadTag title="Blog Posts" description="Blog index for NoahYamamoto.com" path="/blog" />
         <Canvas />
         <header className={CSS.blogHeader}>
           <div className={CSS.topHeader}>
