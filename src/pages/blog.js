@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import HeadTag from '../components/HeadTag';
@@ -11,23 +11,18 @@ import Canvas from '../components/Canvas';
 import 'normalize.css';
 import '../css/index.css';
 
-// Blog index.
-class blog extends React.Component {
-  stickyRef = React.createRef();
+function blog({ data: { allMarkdownRemark: { edges } } }) {
+  const stickyRef = useRef();
+  const fakeStickyRef = useRef();
 
-  fakeStickyRef = React.createRef();
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, false);
+    return (() => window.removeEventListener('scroll', handleScroll, false));
+  }, []);
 
-  componentDidMount = () => {
-    window.addEventListener('scroll', this.handleScroll, false);
-  }
-
-  componentWillUnmount = () => {
-    window.removeEventListener('scroll', this.handleScroll, false);
-  };
-
-  handleScroll = () => {
-    const { current: sticky } = this.stickyRef;
-    const { current: fakeSticky } = this.fakeStickyRef;
+  const handleScroll = () => {
+    const { current: sticky } = stickyRef;
+    const { current: fakeSticky } = fakeStickyRef;
     if (sticky.classList.contains(CSS.stickyHeader)) {
       // If it contains it, we're looking to remove it.
       // Remove it if our scroll hits the top of where it should be.
@@ -43,46 +38,43 @@ class blog extends React.Component {
     }
   };
 
-  render() {
-    const { data: { allMarkdownRemark: { edges } } } = this.props;
-    return (
-      <section className={CSS.blog}>
-        <HeadTag title="Blog Posts" description="Blog index for NoahYamamoto.com" path="/blog" />
-        <Canvas />
-        <header className={CSS.blogHeader}>
-          <div className={CSS.topHeader}>
-            <div className={CSS.nameContainer}>
-              <FancyLink to="/" internal animated>
-                Noah Yamamoto
-              </FancyLink>
-            </div>
+  return (
+    <section className={CSS.blog}>
+      <HeadTag title="Blog Posts" description="Blog index for NoahYamamoto.com" path="/blog" />
+      <Canvas />
+      <header className={CSS.blogHeader}>
+        <div className={CSS.topHeader}>
+          <div className={CSS.nameContainer}>
+            <FancyLink to="/" internal animated>
+              Noah Yamamoto
+            </FancyLink>
           </div>
-          <div
-            className={CSS.bottomHeader}
-            style={{ display: 'none', visibility: 'hidden' }}
-            ref={this.fakeStickyRef}
-          >
-            <h2 className={CSS.postTitle}>Write-Ups</h2>
-            <span className={CSS.postCount}>n posts</span>
-          </div>
-          <div className={CSS.bottomHeader} ref={this.stickyRef}>
-            <h2 className={CSS.postTitle}>Write-Ups</h2>
-            <p className={CSS.postCount}>{`${edges.length || 0} posts`}</p>
-          </div>
-        </header>
-        <div className={CSS.content}>
-          <p className={CSS.indexBlurb}>
-            Thanks for checking out my blog! Here I plan to post small to medium-length write-ups about various
-            frontend topics from little-known API&apos;s to guides.
-          </p>
-          <div className={CSS.postsArea}>
-            {edges.map(({ node }) => <ContentBlock type="blog" node={node} key={node.frontmatter.title} />)}
-          </div>
-          <ContactSection />
         </div>
-      </section>
-    );
-  }
+        <div
+          className={CSS.bottomHeader}
+          style={{ display: 'none', visibility: 'hidden' }}
+          ref={fakeStickyRef}
+        >
+          <h2 className={CSS.postTitle}>Write-Ups</h2>
+          <span className={CSS.postCount}>n posts</span>
+        </div>
+        <div className={CSS.bottomHeader} ref={stickyRef}>
+          <h2 className={CSS.postTitle}>Write-Ups</h2>
+          <p className={CSS.postCount}>{`${edges.length || 0} posts`}</p>
+        </div>
+      </header>
+      <div className={CSS.content}>
+        <p className={CSS.indexBlurb}>
+          Thanks for checking out my blog! Here I plan to post small to medium-length write-ups about various
+          frontend topics from little-known API&apos;s to guides.
+        </p>
+        <div className={CSS.postsArea}>
+          {edges.map(({ node }) => <ContentBlock type="blog" node={node} key={node.frontmatter.title} />)}
+        </div>
+        <ContactSection />
+      </div>
+    </section>
+  );
 }
 
 // When I hit 10 blog posts I need to figure out a pagination thingy.

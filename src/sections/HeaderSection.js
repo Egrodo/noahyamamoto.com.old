@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import FancyLink from '../components/FancyLink';
 
@@ -51,37 +51,30 @@ const query = graphql`
   }
 `;
 
-class HeaderSection extends React.Component {
-  state = {
-    hideAll: false,
-    hideFooter: false,
-  };
+function HeaderSection() {
+  const [{ hideAll, hideFooter }, setHidden] = useState({ hideAll: false, hideFooter: false });
 
-  headerRef = React.createRef();
+  const headerRef = useRef();
+  const footerRef = useRef();
 
-  footerRef = React.createRef();
-
-  componentDidMount = () => {
-    window.addEventListener('scroll', this.handleScroll, false);
-  };
-
-  componentWillUnmount = () => {
-    window.removeEventListener('scroll', this.handleScroll, false);
-  };
-
-  handleScroll = () => {
+  const handleScroll = () => {
     // First check if the user has passed the arrow
-    const newState = {};
-    if (window.scrollY > this.footerRef.current.scrollHeight + 100) {
+    const newState = { hideAll: false, hideFooter: false };
+    if (window.scrollY > footerRef.current.scrollHeight + 100) {
       newState.hideFooter = true;
     } else newState.hideFooter = false;
-    if (window.scrollY > this.headerRef.current.scrollHeight) {
+    if (window.scrollY > headerRef.current.scrollHeight) {
       newState.hideAll = true;
     } else newState.hideAll = false;
-    this.setState(newState);
+    setHidden(newState);
   };
 
-  render = () => (
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, false);
+    return (() => window.removeEventListener('scroll', handleScroll, false));
+  }, []);
+
+  return (
     <StaticQuery
       query={query}
       render={(data) => {
@@ -91,10 +84,9 @@ class HeaderSection extends React.Component {
         const githubImg = data?.githubImg?.childImageSharp?.fixed;
         const instaImg = data?.instaImg?.childImageSharp?.fixed;
         const linkedinImg = data?.linkedinImg?.childImageSharp?.fixed;
-        const { hideAll, hideFooter } = this.state;
 
         return (
-          <header className={`${CSS.Header} ${hideAll && CSS.hide}`} ref={this.headerRef}>
+          <header className={`${CSS.Header} ${hideAll && CSS.hide}`} ref={headerRef}>
             <div className={CSS.profileImgContainer}>
               <img src={profilePic.src} className={CSS.profileImg} alt="Noah Yamamoto" />
             </div>
@@ -158,7 +150,7 @@ class HeaderSection extends React.Component {
                 />
               </a>
             </div>
-            <a href="#Projects" className={`${CSS.scrollContainer} ${hideFooter ? CSS.hide : ''}`} ref={this.footerRef}>
+            <a href="#Projects" className={`${CSS.scrollContainer} ${hideFooter ? CSS.hide : ''}`} ref={footerRef}>
               <div className={CSS.chevronContainer}>
                 <div className={CSS.scrollChevron} />
                 <div className={CSS.scrollChevron} />
@@ -169,7 +161,7 @@ class HeaderSection extends React.Component {
         );
       }}
     />
-  )
+  );
 }
 
 export default HeaderSection;

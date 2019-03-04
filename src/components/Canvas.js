@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 /* Mouse trail adapted from a jQuery Codepen by Bryan C https://codepen.io/bryjch/pen/QEoXwA */
 
@@ -10,40 +10,12 @@ class Point {
   }
 }
 
-class Canvas extends React.Component {
-  state = {
-    cHeight: 0,
-    cWidth: 0,
-  };
+function Canvas() {
+  const [{ cHeight, cWidth }, setSize] = useState({ cHeight: 0, cWidth: 0 });
+  const canvasRef = useRef();
 
-  canvas = React.createRef();
-
-  componentDidMount = () => {
-    // Set height and width on load because if set in state body isn't defined yet.
-    this.setState({
-      cHeight: document.body.clientHeight,
-      cWidth: document.body.clientWidth,
-    });
-
-    window.addEventListener(
-      'resize',
-      () => {
-        this.setState({
-          cHeight: document.body.clientHeight,
-          cWidth: document.body.clientWidth,
-        });
-      },
-      false,
-    );
-
-    // If the device supports cursors, start animation.
-    if (matchMedia('(pointer:fine)').matches) {
-      this.startAnimation();
-    }
-  }
-
-  startAnimation = () => {
-    const canvas = this.canvas.current;
+  const startAnimation = () => {
+    const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
 
     const points = [];
@@ -105,12 +77,33 @@ class Canvas extends React.Component {
     };
 
     animatePoints();
-  }
+  };
 
-  render = () => {
-    const { cHeight, cWidth } = this.state;
-    return <canvas ref={this.canvas} width={cWidth} height={cHeight} />;
-  }
+  useEffect(() => {
+    // Set height and width on load because if set in state body isn't defined yet.
+    setSize({
+      cHeight: document.body.clientHeight,
+      cWidth: document.body.clientWidth,
+    });
+
+    window.addEventListener(
+      'resize',
+      () => {
+        setSize({
+          cHeight: document.body.clientHeight,
+          cWidth: document.body.clientWidth,
+        });
+      },
+      false,
+    );
+
+    // If the device supports cursors, start animation.
+    if (matchMedia('(pointer:fine)').matches) {
+      startAnimation();
+    }
+  }, []);
+
+  return <canvas ref={canvasRef} width={cWidth} height={cHeight} />;
 }
 
 export default Canvas;
