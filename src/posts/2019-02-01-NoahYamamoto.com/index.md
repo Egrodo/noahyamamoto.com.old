@@ -44,7 +44,7 @@ const spreadRate = 7 * (1 - lifePercent);
 ctx.lineJoin = 'round';
 ctx.lineWidth = spreadRate;
 
-// As time increases decrease r and b, increase g to go from purple to green.
+// As time increases red, increase blue to go from purple to blue.
 const red = Math.floor(190 - (190 * lifePercent));
 const green = 0;
 const blue = Math.floor(210 + (210 * lifePercent));

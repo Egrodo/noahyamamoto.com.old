@@ -9,7 +9,7 @@ excerpt: The first ever Javascript project I made was a site that would allow yo
 The first ever Javascript project I made was a site that would allow you to find synonyms of a given word. It was super rudimentary, but it taught me a lot about how webapps work. So when I decided I wanted to learn Electron, I figured I'd rehash that old idea for my first project.
 
 <div align="center">
-  <img src="https://i.imgur.com/729DiyD.gif" alt="Syonyms Anywhere" height="500">
+  <img src="https://i.imgur.com/AbogPzo.gif" alt="Syonyms Anywhere" height="500">
 </div>
 
 This app runs in the background and allows you to use a hotkey (ctrl+shift+aspstrophe) to pop up a quick synonym finder on the top right of your screen. It appears on top of any content and disappears after a few seconds so it's super useful while writing a paper or responding to emails when you just can't think of a good word to use. You can click on the words themselves to copy it and get right back to your work!
