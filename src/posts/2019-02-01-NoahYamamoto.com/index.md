@@ -6,7 +6,7 @@ date: '2019-02-01'
 excerpt: For my personal site I made a gradient mouse trail animation that utilizes requestAnimationFrame to run at 60fps throughout the site, here's a little info on how I did that.
 ---
 
-I wanted to make something that would add some flair to my website, and after seeing another developer implement something similar on [their website](https://electerious.com) I figured I'd give it a shot. My first attempt was much simpler, just drawing a line from the last point to the new point then fading out the whole canvas. Check out [version 1 here](https://repl.it/@NoahYamamoto/Mouse-trail-animation-v1).
+I wanted to make something that would add some flair to my website, and after seeing another developer implement something similar on their website I figured I'd give it a shot. My first attempt was much simpler, just drawing a line from the last point to the new point then fading out the whole canvas. Check out [version 1 here](https://repl.it/@NoahYamamoto/Mouse-trail-animation-v1).
 
 However this method had some issues and was very inflexible, so I eventually went about making a better version that keeps track of all active points and animates them individually. Perhaps a bit more complicated, but doing it by hand allows for much more customization without any noticeable drop in performance.
 
@@ -58,7 +58,7 @@ if (matchMedia('(pointer:fine)').matches) {
   this.startAnimation();
 }
 ```
-(This surprisingly has [94.28% support](https://caniuse.com/#feat=matchmedia), how had I not heard of it before‽)
+(This surprisingly has [98.12% support](https://caniuse.com/#feat=matchmedia), how had I not heard of it before‽)
 
 Anyways, throw all this into a component and you'll get a fancy mouse trail animation! Full code below:
 
