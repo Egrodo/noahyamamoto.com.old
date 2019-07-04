@@ -6,14 +6,14 @@ import CSS from '../css/HeaderSection.module.css';
 
 const query = graphql`
   query HeaderQuery {
-    resumeLink: allFile(filter: {extension: {eq: "pdf"}}) {
+    resumeLink: allFile(filter: { extension: { eq: "pdf" } }) {
       edges {
         node {
           publicURL
         }
       }
     }
-    profilePic: file(relativePath: {eq: "profilePic.jpeg"}) {
+    profilePic: file(relativePath: { eq: "profilePic.jpeg" }) {
       childImageSharp {
         fixed(width: 300, height: 300) {
           src
@@ -21,7 +21,7 @@ const query = graphql`
         }
       }
     }
-    instaImg: file(relativePath: {eq: "instagram.png"}) {
+    instaImg: file(relativePath: { eq: "instagram.png" }) {
       relativePath
       childImageSharp {
         fixed(width: 128, height: 128) {
@@ -30,7 +30,7 @@ const query = graphql`
         }
       }
     }
-    linkedinImg: file(relativePath: {eq: "linkedin.png"}) {
+    linkedinImg: file(relativePath: { eq: "linkedin.png" }) {
       relativePath
       childImageSharp {
         fixed(width: 128, height: 128) {
@@ -39,7 +39,7 @@ const query = graphql`
         }
       }
     }
-    githubImg: file(relativePath: {eq: "github.png"}) {
+    githubImg: file(relativePath: { eq: "github.png" }) {
       relativePath
       childImageSharp {
         fixed(width: 128, height: 128) {
@@ -71,7 +71,7 @@ function HeaderSection() {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, false);
-    return (() => window.removeEventListener('scroll', handleScroll, false));
+    return () => window.removeEventListener('scroll', handleScroll, false);
   }, []);
 
   return (
@@ -98,9 +98,8 @@ function HeaderSection() {
             </div>
             <div className={CSS.blurbContainer}>
               <p>
-              I&apos;m a CIS student at Baruch College. I love making things on the
-              web and have worked for cool companies like Marvel, Refugees
-              United, and Squarespace (2019).
+                I&apos;m a CIS student at Baruch College. I love making things on the web and have worked for cool
+                companies like Marvel, Refugees United, Squarespace, and Facebook.
               </p>
               <FancyLink
                 to={resumeLink}
@@ -109,7 +108,7 @@ function HeaderSection() {
                 }}
                 newTab
               >
-              Full Résumé
+                Full Résumé
               </FancyLink>
             </div>
             <div className={CSS.socialContainer}>
@@ -119,11 +118,7 @@ function HeaderSection() {
                 rel="noopener noreferrer"
                 className={CSS.socialLink}
               >
-                <img
-                  src={instaImg.src}
-                  className={CSS.socialImg}
-                  alt="Instagram Link"
-                />
+                <img src={instaImg.src} className={CSS.socialImg} alt="Instagram Link" />
               </a>
               <a
                 href="https://www.linkedin.com/in/~noah"
@@ -131,23 +126,10 @@ function HeaderSection() {
                 rel="noopener noreferrer"
                 className={CSS.socialLink}
               >
-                <img
-                  src={linkedinImg.src}
-                  className={CSS.socialImg}
-                  alt="Linkedin Link"
-                />
+                <img src={linkedinImg.src} className={CSS.socialImg} alt="Linkedin Link" />
               </a>
-              <a
-                href="https://github.com/Egrodo/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className={CSS.socialLink}
-              >
-                <img
-                  src={githubImg.src}
-                  className={CSS.socialImg}
-                  alt="Github Link"
-                />
+              <a href="https://github.com/Egrodo/" target="_blank" rel="noreferrer noopener" className={CSS.socialLink}>
+                <img src={githubImg.src} className={CSS.socialImg} alt="Github Link" />
               </a>
             </div>
             <a href="#Projects" className={`${CSS.scrollContainer} ${hideFooter ? CSS.hide : ''}`} ref={footerRef}>
