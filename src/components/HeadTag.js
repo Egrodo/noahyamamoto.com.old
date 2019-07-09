@@ -7,10 +7,7 @@ const HeadTag = ({ title, description, path }) => (
     <title>{title}</title>
     <html lang="en" />
     <meta charSet="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover" />
     <meta name="author" content="Noah Yamamoto" />
     <meta name="keywords" content="noah, yamamoto, site, website, personal, portfolio, blog" />
     <meta name="description" content={description} />
@@ -38,6 +35,10 @@ const HeadTag = ({ title, description, path }) => (
     <link rel="mask-icon" href="https://noahyamamoto.com/safari-pinned-tab.svg" color="#b200f0" />
     <meta name="msapplication-TileColor" content="#b200f0" />
     <meta name="theme-color" content="#ffffff" />
+    <script defer type="text/javascript">
+      console.log("%c Thanks for checking out my site! Check out my Github while you're here if you want to see the real
+      source.", "background-color: black; color: purple; display: block;"); console.log("https://Github.com/Egrodo");
+    </script>
   </Helmet>
 );
 
