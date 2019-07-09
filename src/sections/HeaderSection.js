@@ -70,6 +70,11 @@ function HeaderSection() {
   };
 
   useEffect(() => {
+    console.log(
+      "%c Thanks for checking out my site! Check out my Github while you're here if you want to see the real source.",
+      'background-color: black; color: #b200f0; display: block; padding: 1em; text-align: center; font-family: Arial; font-size: 1.2em',
+    );
+    console.log('https://Github.com/Egrodo');
     window.addEventListener('scroll', handleScroll, false);
     return () => window.removeEventListener('scroll', handleScroll, false);
   }, []);
