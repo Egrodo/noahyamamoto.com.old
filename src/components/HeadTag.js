@@ -37,7 +37,8 @@ const HeadTag = ({ title, description, path }) => (
     <meta name="theme-color" content="#ffffff" />
     <script defer type="text/javascript">
       console.log("%c Thanks for checking out my site! Check out my Github while you're here if you want to see the real
-      source.", "background-color: black; color: purple; display: block;"); console.log("https://Github.com/Egrodo");
+      source.", "background-color: black; color: #b200f0; display: block; padding: 1em; text-align: center; font-family:
+      Arial; font-size: 1.2em"); console.log("https://Github.com/Egrodo");
     </script>
   </Helmet>
 );
