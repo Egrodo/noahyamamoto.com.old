@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import FancyLink from '../components/FancyLink';
+import React, { useState, useEffect, useRef } from "react";
+import { StaticQuery, graphql } from "gatsby";
+import FancyLink from "../components/FancyLink";
 
-import CSS from '../css/HeaderSection.module.css';
+import CSS from "../css/HeaderSection.module.css";
 
 const query = graphql`
   query HeaderQuery {
@@ -72,11 +72,11 @@ function HeaderSection() {
   useEffect(() => {
     console.log(
       "%c Thanks for checking out my site! Check out my Github while you're here if you want to see the real source.",
-      'background-color: black; color: #b200f0; display: block; padding: 1em; text-align: center; font-family: Arial; font-size: 1.2em',
+      "background-color: black; color: #b200f0; display: block; padding: 1em; text-align: center; font-family: Arial; font-size: 1.2em"
     );
-    console.log('https://Github.com/Egrodo');
-    window.addEventListener('scroll', handleScroll, false);
-    return () => window.removeEventListener('scroll', handleScroll, false);
+    console.log("https://Github.com/Egrodo");
+    window.addEventListener("scroll", handleScroll, false);
+    return () => window.removeEventListener("scroll", handleScroll, false);
   }, []);
 
   return (
@@ -103,13 +103,13 @@ function HeaderSection() {
             </div>
             <div className={CSS.blurbContainer}>
               <p>
-                I&apos;m a CIS student at Baruch College. I love making things on the web and have worked for cool
-                companies like Marvel, Refugees United, Squarespace, and Facebook.
+                I&apos;m a frontend developer in New York City. I love making things on the web and have worked for cool
+                companies like Marvel, Refugees United, Squarespace, and currently Facebook.
               </p>
               <FancyLink
                 to={resumeLink}
                 style={{
-                  fontFamily: 'Work Sans',
+                  fontFamily: "Work Sans",
                 }}
                 newTab
               >
@@ -137,7 +137,7 @@ function HeaderSection() {
                 <img src={githubImg.src} className={CSS.socialImg} alt="Github Link" />
               </a>
             </div>
-            <a href="#Projects" className={`${CSS.scrollContainer} ${hideFooter ? CSS.hide : ''}`} ref={footerRef}>
+            <a href="#Projects" className={`${CSS.scrollContainer} ${hideFooter ? CSS.hide : ""}`} ref={footerRef}>
               <div className={CSS.chevronContainer}>
                 <div className={CSS.scrollChevron} />
                 <div className={CSS.scrollChevron} />
